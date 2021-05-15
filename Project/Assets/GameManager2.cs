@@ -60,7 +60,7 @@ public static class GameManager2
 
 
                     // Empty the selected items array
-                    //Array.Clear(selected,0,2);
+                    Array.Clear(selected,0,2);
 
                 }
                 
