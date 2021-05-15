@@ -32,7 +32,7 @@ public class ArrowBehavior : MonoBehaviour
         transform.parent = collision.transform;
         // selector.Select(collision.GetComponent<Shootable>());
         Debug.Log("Arrow hit GameObject: " + collision.gameObject.transform.root.gameObject + " With tag: " + collision.transform.root.gameObject.tag);
-        GameManager2.AssignSelection(collision.gameObject);
+        GameManager.AssignSelection(collision.gameObject);
         
         
         Destroy(rb);

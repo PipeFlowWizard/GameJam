@@ -67,6 +67,10 @@ public class Blob : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Checks if any of the Blob's sockets are open
+    /// </summary>
+    /// <returns>returns the first open Socket found. If there are no open Sockets, returns null</returns>
     private Socket GetOpenSocket()
     {
         foreach (var socket in appendageSockets)
@@ -78,6 +82,15 @@ public class Blob : MonoBehaviour
         }
 
         return null;
+    }
+
+    /// <summary>
+    /// Matches this Blob to another blob
+    /// </summary>
+    /// <param name="other">Blob to be matched with</param>
+    public void MatchWithAnother(Blob other)
+    {
+        
     }
     
 }
