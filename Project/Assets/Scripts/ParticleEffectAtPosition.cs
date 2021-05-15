@@ -11,7 +11,8 @@ public class ParticleEffectAtPosition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = toFollow.position;
+        if (toFollow)
+            transform.position = toFollow.position;
     }
 
     public static void DisplaySelection(Transform tr)
