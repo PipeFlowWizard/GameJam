@@ -13,6 +13,7 @@
           <e p="ArrowDispenser.cs" t="Include" />
           <e p="Blob.cs" t="Include" />
           <e p="ControlKey.cs" t="Include" />
+          <e p="Menu.cs" t="Include" />
           <e p="Socket.cs" t="Include" />
           <e p="TopDownCharacterController.cs" t="Include" />
         </e>

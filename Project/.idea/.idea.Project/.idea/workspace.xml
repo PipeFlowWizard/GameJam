@@ -26,8 +26,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ISocketable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AppendageAsset.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Blob.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Appendage.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Socket.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Appendage.cs" />
       </list>
     </option>
   </component>

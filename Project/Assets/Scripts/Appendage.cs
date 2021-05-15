@@ -14,6 +14,7 @@ public class Appendage : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
         this.Side = asset.Side;
         this.tag = asset.Type;
         if(asset != null)
@@ -23,6 +24,8 @@ public class Appendage : MonoBehaviour
     public void ResetAppendage()
     {
         appendage = Instantiate(asset.appendagePrefab, transform);
+        var prefab = appendage.GetComponent<Rigidbody2D>();
+        prefab.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 }
 
