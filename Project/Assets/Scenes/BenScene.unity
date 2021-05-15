@@ -161,10 +161,10 @@ HingeJoint2D:
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
+    m_LowerAngle: 60
+    m_UpperAngle: 360
 --- !u!50 &423730312
 Rigidbody2D:
   serializedVersion: 4
@@ -177,7 +177,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -291,12 +291,12 @@ PrefabInstance:
     - target: {fileID: 114831734425748116, guid: 14dc04dec67d2474f827124cb4906b0e,
         type: 3}
       propertyPath: moveForce
-      value: 500
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114831734425748118, guid: 14dc04dec67d2474f827124cb4906b0e,
         type: 3}
       propertyPath: m_Mass
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114831734425748138, guid: 14dc04dec67d2474f827124cb4906b0e,
         type: 3}
@@ -353,6 +353,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114831734425748139, guid: 14dc04dec67d2474f827124cb4906b0e,
+        type: 3}
+      propertyPath: inputs.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831734425748139, guid: 14dc04dec67d2474f827124cb4906b0e,
+        type: 3}
+      propertyPath: inputs.Array.data[4].identifier
+      value: fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831734425748139, guid: 14dc04dec67d2474f827124cb4906b0e,
+        type: 3}
+      propertyPath: inputs.Array.data[4].toggleInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831734425748139, guid: 14dc04dec67d2474f827124cb4906b0e,
+        type: 3}
+      propertyPath: inputs.Array.data[4].keyCodes.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831734425748139, guid: 14dc04dec67d2474f827124cb4906b0e,
+        type: 3}
+      propertyPath: inputs.Array.data[4].keyCodes.Array.data[0]
+      value: d
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831734425748139, guid: 14dc04dec67d2474f827124cb4906b0e,
+        type: 3}
+      propertyPath: inputs.Array.data[4].keyCodes.Array.data[1]
+      value: rightarrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831734425748139, guid: 14dc04dec67d2474f827124cb4906b0e,
+        type: 3}
+      propertyPath: inputs.Array.data[4].mouseButtons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831734425748139, guid: 14dc04dec67d2474f827124cb4906b0e,
+        type: 3}
+      propertyPath: inputs.Array.data[4].mouseButtons.Array.data[0]
+      value: leftButton
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14dc04dec67d2474f827124cb4906b0e, type: 3}
 --- !u!1 &645484262 stripped
@@ -368,7 +408,7 @@ HingeJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645484262}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 423730312}
@@ -376,7 +416,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.089, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -385,6 +425,20 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
+--- !u!114 &645484270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645484262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4e5af111403b543b984ac9a3410963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowPrefab: {fileID: 6290920925745314632, guid: 0b285735c7f6e44439f7f71ba046fcef,
+    type: 3}
 --- !u!1001 &700979453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -626,10 +680,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -756,10 +810,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
