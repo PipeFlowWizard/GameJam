@@ -14,11 +14,16 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TopDownCharacterController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ControlKey.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Blob.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Socket.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Appendage.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Blob.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ISocketable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Appendage.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Socket.cs" />
       </list>
     </option>
   </component>
@@ -26,6 +31,11 @@
   <component name="PropertiesComponent">
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="public" />
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -36,9 +46,13 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="WindowStateProjectService">
-    <state x="-1304" y="240" width="672" height="677" key="run.anything.popup" timestamp="1621046366099">
+    <state x="-1304" y="240" width="672" height="677" key="run.anything.popup" timestamp="1621049848626">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1304" y="240" width="672" height="677" key="run.anything.popup/0.0.2560.1400/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621046366099" />
+    <state x="-1304" y="240" width="672" height="677" key="run.anything.popup/0.0.2560.1400/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621049848626" />
+    <state x="-1304" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1621048371998">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1304" y="173" width="672" height="676" key="search.everywhere.popup/0.0.2560.1400/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621048371998" />
   </component>
 </project>

@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class Socket : MonoBehaviour
 {
-    public void Attach(Socket socket)
+    public Appendage appendage;
+    
+    public void Attach(Appendage a)
     {
-        transform.parent = socket.transform;
-        transform.localPosition = Vector2.zero;
+        if(!a.isSocketed)
+        {
+            var appendageTrans = a.transform;
+            appendage = a;
+            appendageTrans.parent = transform;
+            appendageTrans.localPosition = transform.position;
+        }
+        else Debug.Log("This appendage is already socketed");
     }
 }

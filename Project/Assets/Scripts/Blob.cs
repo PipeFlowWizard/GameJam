@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Blob : MonoBehaviour
 {
-    
+
+    public Socket[] appendageSockets = new Socket[5];
     private float lastMoveTime = 0;
     public float movementInterval = 0;
     public float movementSpeed = 1;
