@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
     /// Called by the arrow behaviour when an arrow hits an object
     /// </summary>
     /// <param name="gameObject">The gameobject hit by the arrow</param>
-    public static void AssignSelection(GameObject gameObject)
+    public void AssignSelection(GameObject gameObject)
     {
         // Get the top most object in the gameobject tree
         var mainObject = gameObject.transform.root.gameObject;
@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
                 if (selected[0].CompareTag("Blob") && selected[1].CompareTag("Blob"))
                 {
                     // Pair them together
-                    selected[0].GetComponent<Blob>().MatchWithAnother(selected[1].GetComponent<Blob>());
+                    MatchBlobs(selected[0].GetComponent<Blob>(), selected[1].GetComponent<Blob>());
                 }
                 //Case 2: Appendage x Appendage
                 if (selected[0].CompareTag("Appendage") && selected[1].CompareTag("Appendage"))
@@ -130,5 +130,14 @@ public class GameManager : MonoBehaviour
             
         }
 
+    }
+
+    /// <summary>
+    /// Matches two blobs together
+    /// </summary>
+    /// <param name="other">Blob to be matched with</param>
+    public void MatchBlobs(Blob blob1, Blob blob2)
+    {
+        
     }
 }

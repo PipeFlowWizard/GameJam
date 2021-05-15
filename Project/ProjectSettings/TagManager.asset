@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Blob
   - Appendage
+  - Arrow
   layers:
   - Default
   - TransparentFX

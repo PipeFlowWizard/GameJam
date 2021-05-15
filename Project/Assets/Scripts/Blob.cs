@@ -8,19 +8,31 @@ public class Blob : MonoBehaviour
 {
 
     public Socket[] appendageSockets;
-    private float lastMoveTime = 0;
     public float movementInterval = 0;
     public float movementSpeed = 1;
     public Vector2 movementBounds = Vector2.zero;
     
+    
+    private float lastMoveTime = 0;
     private Rigidbody2D _rb;
     private Vector2 desiredLocation = Vector2.zero;
     private float step = 0;
-
     private int emptySocketIndex = 0;
+
+    public int numRightLegs = 0;
+    public int numLeftLegs = 0;
+    public int numRightArms = 0;
+    public int numLeftArms = 0;
+
+    public int NumArms => numLeftArms + numRightArms;
+    public int MumLegs => numLeftLegs + numRightLegs;
+    
+
 
     private void Start()
     {
+        
+        
         _rb = GetComponent<Rigidbody2D>();
         appendageSockets = GetComponentsInChildren<Socket>();
     }
@@ -63,6 +75,18 @@ public class Blob : MonoBehaviour
         {
             var socket = GetOpenSocket();
             socket.Attach(appendage);
+
+            if (appendage.Type == "Arm")
+            {
+                if (appendage.Side == "Left") numLeftArms++;
+                if (appendage.Side == "Righ") numRightArms++;
+            }
+            if (appendage.Type == "Leg")
+            {
+                if (appendage.Side == "Left") numLeftLegs++;
+                if (appendage.Side == "Righ") numRightLegs++;
+            }
+            
         }
         
     }
@@ -84,13 +108,7 @@ public class Blob : MonoBehaviour
         return null;
     }
 
-    /// <summary>
-    /// Matches this Blob to another blob
-    /// </summary>
-    /// <param name="other">Blob to be matched with</param>
-    public void MatchWithAnother(Blob other)
-    {
-        
-    }
+    
+    
     
 }
