@@ -7,25 +7,27 @@ public class Appendage : MonoBehaviour
     public Socket socket;
     public string Side;
     public string Type;
-    public AppendageAsset asset;
-    public GameObject appendage;
     public Rigidbody2D rb;
+
+    private Transform parentJoint;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         
-        this.Side = asset.Side;
-        this.tag = asset.Type;
-        if(asset != null)
-            ResetAppendage();
     }
 
-    public void ResetAppendage()
+    private void FixedUpdate()
     {
-        appendage = Instantiate(asset.appendagePrefab, transform);
-        var prefab = appendage.GetComponent<Rigidbody2D>();
-        prefab.constraints = RigidbodyConstraints2D.FreezeAll;
+        if (parentJoint)
+            rb.MovePosition(parentJoint.position);
+    }
+
+    public void Attach(Transform tr)
+    {
+        transform.parent = tr;
+        transform.localPosition = Vector2.zero;
+        parentJoint = tr;
     }
 }
 

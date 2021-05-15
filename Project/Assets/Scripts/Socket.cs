@@ -10,10 +10,8 @@ public class Socket : MonoBehaviour
     {
         if(!a.isSocketed)
         {
-            var appendageTrans = a.transform;
+            a.Attach(transform);
             appendage = a;
-            appendageTrans.SetParent(transform,false);
-            appendageTrans.localPosition = Vector2.zero;
             hasAppendage = true;
         }
         else Debug.Log("This appendage is already socketed");

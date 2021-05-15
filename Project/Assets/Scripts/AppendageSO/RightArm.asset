@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d8d54c64c3d70478ddefed44b9ef35, type: 3}
   m_Name: RightArm
   m_EditorClassIdentifier: 
-  appendagePrefab: {fileID: 0}
-  Type: 
-  Side: 
+  appendagePrefab: {fileID: 2951675879083787707, guid: 2e8d76fdcf2b4fd46966c417444d7f9c,
+    type: 3}
+  Type: Arm
+  Side: Right
