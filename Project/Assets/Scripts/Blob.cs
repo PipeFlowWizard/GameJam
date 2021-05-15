@@ -25,14 +25,14 @@ public class Blob : MonoBehaviour
     public int numLeftArms = 0;
 
     public int NumArms => numLeftArms + numRightArms;
-    public int MumLegs => numLeftLegs + numRightLegs;
+    public int NumLegs => numLeftLegs + numRightLegs;
     
 
 
     private void Start()
     {
         
-        
+        CalculateDesiredLocation();
         _rb = GetComponent<Rigidbody2D>();
         appendageSockets = GetComponentsInChildren<Socket>();
     }
@@ -79,12 +79,12 @@ public class Blob : MonoBehaviour
             if (appendage.Type == "Arm")
             {
                 if (appendage.Side == "Left") numLeftArms++;
-                if (appendage.Side == "Righ") numRightArms++;
+                if (appendage.Side == "Right") numRightArms++;
             }
             if (appendage.Type == "Leg")
             {
                 if (appendage.Side == "Left") numLeftLegs++;
-                if (appendage.Side == "Righ") numRightLegs++;
+                if (appendage.Side == "Right") numRightLegs++;
             }
             
         }

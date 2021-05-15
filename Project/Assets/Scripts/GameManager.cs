@@ -138,6 +138,33 @@ public class GameManager : MonoBehaviour
     /// <param name="other">Blob to be matched with</param>
     public void MatchBlobs(Blob blob1, Blob blob2)
     {
+        var totalNumLegs = blob1.NumLegs + blob2.NumLegs;
+        var totalNumArms = blob1.NumArms + blob2.NumArms;
+        var totalNumLeftArms = blob1.numLeftArms + blob2.numLeftArms;
+        var totalNumRightArms = blob1.numRightArms + blob2.numRightArms;
+        var totalNumLeftLegs = blob1.numLeftLegs + blob2.numLeftLegs;
+        var totalNumRightLegs = blob1.numRightLegs + blob2.numRightLegs;
         
+        int points = 0;
+        
+        // Criteria for now
+        // if blobs have nothing on them, - 5 points
+        if (totalNumLegs == 0 && totalNumArms == 0)
+        {
+            points = -5;
+        }
+        else
+        {
+            points += totalNumArms;
+            points += totalNumLegs;
+            
+            if (totalNumLeftArms == totalNumRightArms) points += totalNumArms;
+            if (totalNumLeftLegs == totalNumRightLegs) points += totalNumLegs;
+        }
+        score += points;
+        
+        // Play particles
+        Destroy(blob1.gameObject);
+        Destroy(blob2.gameObject);
     }
 }
