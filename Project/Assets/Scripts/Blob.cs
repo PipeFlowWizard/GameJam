@@ -56,5 +56,28 @@ public class Blob : MonoBehaviour
         desiredLocation = new Vector2(UnityEngine.Random.Range(-boundsX,boundsX), UnityEngine.Random.Range(-boundsY,boundsY));
         desiredLocation = desiredLocation * Mathf.PerlinNoise(Time.time, Time.time);
     }
+
+    public void Attach(Appendage appendage)
+    {
+        if (GetOpenSocket() != null)
+        {
+            var socket = GetOpenSocket();
+            socket.Attach(appendage);
+        }
+        
+    }
+
+    private Socket GetOpenSocket()
+    {
+        foreach (var socket in appendageSockets)
+        {
+            if (socket.HasAppendage == false)
+            {
+                return socket;
+            }
+        }
+
+        return null;
+    }
     
 }

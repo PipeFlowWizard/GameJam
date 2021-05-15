@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.Interactions;
@@ -49,18 +50,17 @@ public static class GameManager2
                     //Case 3: Blob x Appendage || Appendage x Blob
                     if (selected[0].CompareTag("Blob") && selected[1].CompareTag("Appendage"))
                     {
-                        
+                        selected[0].GetComponent<Blob>().Attach(selected[1].GetComponent<Appendage>());
                     }
 
                     if (selected[0].CompareTag("Appendage") && selected[1].CompareTag("Blob"))
                     {
-                        
+                        selected[1].GetComponent<Blob>().Attach(selected[0].GetComponent<Appendage>());
                     }
 
 
-                        // Empty the selected items array
-                    selected[0] = null;
-                    selected[1] = null;
+                    // Empty the selected items array
+                    //Array.Clear(selected,0,2);
 
                 }
                 
