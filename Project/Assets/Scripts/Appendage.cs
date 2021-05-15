@@ -20,7 +20,7 @@ public class Appendage : MonoBehaviour
 
     public void ResetAppendage()
     {
-        appendage = Instantiate(asset.AppendagePrefab, transform);
+        appendage = Instantiate(asset.appendagePrefab, transform);
     }
 }
 

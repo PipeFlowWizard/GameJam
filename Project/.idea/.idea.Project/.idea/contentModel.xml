@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Appendage.cs" t="Include" />
+          <e p="AppendageAsset.cs" t="Include" />
           <e p="ArrowBehavior.cs" t="Include" />
           <e p="ArrowDispenser.cs" t="Include" />
           <e p="Blob.cs" t="Include" />

@@ -17,6 +17,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArrowBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArrowDispenser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Socket.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AppendageAsset.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Appendage.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -24,8 +25,9 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Blob.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ISocketable.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Appendage.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Socket.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Appendage.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AppendageAsset.cs" />
       </list>
     </option>
   </component>
