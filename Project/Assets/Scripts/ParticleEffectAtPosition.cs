@@ -4,22 +4,33 @@ using UnityEngine;
 
 public class ParticleEffectAtPosition : MonoBehaviour
 {
-    private static GameObject instance;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private static ParticleEffectAtPosition instance;
+    private Transform toFollow;
+    private ParticleSystem pSystem;
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = toFollow.position;
     }
 
-    public static void AssignPosition(Vector2 pos)
+    public static void DisplaySelection(Transform tr)
     {
+        if (!instance)
+            instance = FindObjectOfType<ParticleEffectAtPosition>();
+        if (!instance)
+        {
+            Debug.Log("There is no instance of selection particles int he scene");
+            return;
+        }
 
+        instance.toFollow = tr;
+        if (!instance.pSystem.isPlaying)
+            instance.pSystem.Play();
+    }
+
+    public static void Deselect()
+    {
+        instance.pSystem.Stop();
     }
 }

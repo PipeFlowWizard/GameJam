@@ -26,6 +26,7 @@ public class Appendage : MonoBehaviour
     public void Attach(Transform tr)
     {
         transform.parent = tr;
+        transform.localRotation = Quaternion.identity;
         transform.localPosition = Vector2.zero;
         parentJoint = tr;
     }
