@@ -4,12 +4,35 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    public float limbSpawnDelay, blobSpawnDelay;
+
     public GameObject[] blobPrefabs, limbPrefabs;
     public Vector2 spawnBounds;
+
+    private float limbTimer = 0, blobTimer = 0;
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(Vector3.zero, spawnBounds);
+    }
+
+    private void Update()
+    {
+        limbTimer += Time.deltaTime;
+        blobTimer += Time.deltaTime;
+        
+        if(limbTimer > limbSpawnDelay)
+        {
+            limbTimer = 0;
+            SpawnAppendage();
+        }
+
+        if(blobTimer > blobSpawnDelay)
+        {
+            blobTimer = 0;
+            // pass a random int if you wnat appendages on the blob
+            SpawnBlob();
+        }
     }
 
     public void SpawnBlob()

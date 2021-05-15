@@ -6069,6 +6069,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 7074463447639511902, guid: 6fbc660a6ed3e724d839aed55e1453fb,
+        type: 3}
+      propertyPath: blobSpawnDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074463447639511902, guid: 6fbc660a6ed3e724d839aed55e1453fb,
+        type: 3}
+      propertyPath: limbSpawnDelay
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fbc660a6ed3e724d839aed55e1453fb, type: 3}
 --- !u!4 &6969510744214201475
