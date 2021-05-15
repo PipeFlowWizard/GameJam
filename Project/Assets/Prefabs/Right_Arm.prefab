@@ -44,7 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appendage: {fileID: 0}
-  hasAppendage: 0
 --- !u!1 &2404951011885398713
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,7 +58,7 @@ GameObject:
   - component: {fileID: 690862353775664204}
   m_Layer: 0
   m_Name: Right_Arm
-  m_TagString: Untagged
+  m_TagString: Appendage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

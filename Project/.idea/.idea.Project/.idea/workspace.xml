@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b954c9d2-2f10-4e49-be4c-2f9be9620698" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameManager2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager2.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArrowBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArrowBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Blob.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Blob.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Socket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Socket.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,10 +34,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/AppendageAsset.cs" />
         <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Appendage.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Socket.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Blob.cs" />
-        <option value="$PROJECT_DIR$/Assets/GameManager2.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ArrowBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Socket.cs" />
+        <option value="$PROJECT_DIR$/Assets/GameManager2.cs" />
       </list>
     </option>
   </component>
