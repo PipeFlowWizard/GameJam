@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timeText, scoreText;
     private float remainingTime;
     public GameObject matchParticleBurst;
+    public CinemachineVirtualCamera cam;
+    public CinemachineImpulseSource impulse;
     
 
     
@@ -38,6 +41,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
+        impulse = GetComponent<CinemachineImpulseSource>();
         score = 0;
         remainingTime = timeLimit;
         DisplayRemainingTime();
@@ -168,6 +172,7 @@ public class GameManager : MonoBehaviour
         AddScore(points);
         
         // Play particles
+        impulse.GenerateImpulse();
         Instantiate(matchParticleBurst,blob1.transform.position,quaternion.identity);
         Instantiate(matchParticleBurst,blob2.transform.position,quaternion.identity);
         

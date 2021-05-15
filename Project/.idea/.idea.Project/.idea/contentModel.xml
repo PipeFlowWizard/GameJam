@@ -19,6 +19,7 @@
           <e p="ParticleBurst.cs" t="Include" />
           <e p="ParticleEffectAtPosition.cs" t="Include" />
           <e p="Socket.cs" t="Include" />
+          <e p="Spawner.cs" t="Include" />
           <e p="TopDownCharacterController.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
