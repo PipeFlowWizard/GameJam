@@ -14,9 +14,9 @@ public class Appendage : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
+        socket = GetComponentInChildren<Socket>();
     }
-
+    
     private void FixedUpdate()
     {
         if (parentJoint)
@@ -28,6 +28,10 @@ public class Appendage : MonoBehaviour
         transform.parent = tr;
         transform.localPosition = Vector2.zero;
         parentJoint = tr;
+    }
+    public void Attach2(Appendage a)
+    {
+        socket.Attach(a);
     }
 }
 
