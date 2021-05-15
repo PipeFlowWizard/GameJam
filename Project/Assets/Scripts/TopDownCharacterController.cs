@@ -33,8 +33,10 @@ public class TopDownCharacterController : MonoBehaviour
         if (input["left"])
             Move(Vector2.left);
 
-        transform.rotation = Quaternion.LookRotation(Camera.main.ScreenToWorldPoint(
-            Mouse.current.position.ReadValue()) - transform.position, Vector3.forward);
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        float angle = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x);
+        angle *= (180 / Mathf.PI);
+        transform.rotation = Quaternion.Euler(0, 0, angle - 90);
     }
 
     private void Move(Vector2 v)
