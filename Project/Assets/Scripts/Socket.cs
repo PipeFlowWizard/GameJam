@@ -10,7 +10,6 @@ public class Socket : MonoBehaviour
     {
         if(!a.isSocketed)
         {
-            Destroy(a.rb);
             var appendageTrans = a.transform;
             appendage = a;
             appendageTrans.SetParent(transform,false);
