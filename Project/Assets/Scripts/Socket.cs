@@ -17,9 +17,8 @@ public class Socket : MonoBehaviour
             appendage = a;
             _hasAppendage = true;
 
-            CircleCollider2D col = GetComponentInParent<CircleCollider2D>();
-            //foreach (PolygonCollider2D poly in a.GetComponentsInChildren<PolygonCollider2D>())
-            Physics2D.IgnoreCollision(col, a.GetComponentInChildren<PolygonCollider2D>());
+            Collider2D col = GetComponentInParent<Collider2D>();
+            Physics2D.IgnoreCollision(col, a.GetComponentInChildren<Collider2D>());
             
         }
         else Debug.Log("This appendage is already socketed");
