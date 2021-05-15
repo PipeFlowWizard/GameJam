@@ -13,6 +13,10 @@ public class Socket : MonoBehaviour
             a.Attach(transform);
             appendage = a;
             hasAppendage = true;
+
+            CircleCollider2D col = GetComponentInParent<CircleCollider2D>();
+            //foreach (PolygonCollider2D poly in a.GetComponentsInChildren<PolygonCollider2D>())
+                Physics2D.IgnoreCollision(col, a.GetComponentInChildren<PolygonCollider2D>());
         }
         else Debug.Log("This appendage is already socketed");
     }
