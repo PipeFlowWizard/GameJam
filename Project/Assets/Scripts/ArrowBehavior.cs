@@ -20,8 +20,12 @@ public class ArrowBehavior : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
         transform.parent = collision.transform;
         // selector.Select(collision.GetComponent<Shootable>());
+        GameManager.AssignSelection(collision.gameObject);
+        
+        
         Destroy(rb);
         Destroy(GetComponent<BoxCollider2D>());
         Destroy(this);
+        
     }
 }
