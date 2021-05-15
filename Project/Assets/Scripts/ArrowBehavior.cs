@@ -10,14 +10,16 @@ public class ArrowBehavior : MonoBehaviour
 
     private Rigidbody2D rb;
     private ParticleSystem onHitParticles;
-    private AudioSource asource;
+    private AudioSource asource, hitSource;
 
     private bool ignoreTrigger;
 
     // Start is called before the first frame update
     void Start()
     {
-        asource = GetComponent<AudioSource>();
+        AudioSource[] ar = GetComponents<AudioSource>();
+        asource = ar[0];
+        hitSource = ar[1];
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.up * speed;
 
@@ -48,9 +50,12 @@ public class ArrowBehavior : MonoBehaviour
         if (collision.transform.root.CompareTag("Blob"))
         {
             toPlay = hitBlob[Random.Range(0, hitBlob.Length)];
-        }else if (collision.transform.root.CompareTag("Appendage"))
+            hitSource.Play();
+        }
+        else if (collision.transform.root.CompareTag("Appendage"))
         {
             toPlay = hitAppendage[Random.Range(0, hitAppendage.Length)];
+            hitSource.Play();
         }
         else
         {

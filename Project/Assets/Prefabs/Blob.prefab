@@ -148,6 +148,10 @@ MonoBehaviour:
   movementInterval: 1
   movementSpeed: 1
   movementBounds: {x: 20, y: 20}
+  numRightLegs: 0
+  numLeftLegs: 0
+  numRightArms: 0
+  numLeftArms: 0
 --- !u!1 &1581248909092200464
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,6 +195,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da6736a6184e70d4ea5ed68184af2aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playOnAttach:
+  - {fileID: 8300000, guid: 59e894462d2014d4689ea445d9628788, type: 3}
+  - {fileID: 8300000, guid: 3cac7d0ca9506c64ba2cd91c8734f04d, type: 3}
   appendage: {fileID: 0}
 --- !u!1 &4205448934300274972
 GameObject:
@@ -235,6 +242,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da6736a6184e70d4ea5ed68184af2aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playOnAttach:
+  - {fileID: 8300000, guid: 59e894462d2014d4689ea445d9628788, type: 3}
+  - {fileID: 8300000, guid: 3cac7d0ca9506c64ba2cd91c8734f04d, type: 3}
   appendage: {fileID: 0}
 --- !u!1 &5196725098930940501
 GameObject:
@@ -279,6 +289,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da6736a6184e70d4ea5ed68184af2aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playOnAttach:
+  - {fileID: 8300000, guid: 59e894462d2014d4689ea445d9628788, type: 3}
+  - {fileID: 8300000, guid: 3cac7d0ca9506c64ba2cd91c8734f04d, type: 3}
   appendage: {fileID: 0}
 --- !u!1 &5239360077982992515
 GameObject:
@@ -323,6 +336,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da6736a6184e70d4ea5ed68184af2aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playOnAttach:
+  - {fileID: 8300000, guid: 59e894462d2014d4689ea445d9628788, type: 3}
+  - {fileID: 8300000, guid: 3cac7d0ca9506c64ba2cd91c8734f04d, type: 3}
   appendage: {fileID: 0}
 --- !u!1 &7439875703922022703
 GameObject:
@@ -367,4 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da6736a6184e70d4ea5ed68184af2aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playOnAttach:
+  - {fileID: 8300000, guid: 59e894462d2014d4689ea445d9628788, type: 3}
+  - {fileID: 8300000, guid: 3cac7d0ca9506c64ba2cd91c8734f04d, type: 3}
   appendage: {fileID: 0}
