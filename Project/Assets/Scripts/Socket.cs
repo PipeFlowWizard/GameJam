@@ -5,7 +5,7 @@ using UnityEngine;
 public class Socket : MonoBehaviour
 {
     public Appendage appendage;
-    
+    public bool hasAppendage = false;
     public void Attach(Appendage a)
     {
         if(!a.isSocketed)
@@ -14,6 +14,7 @@ public class Socket : MonoBehaviour
             appendage = a;
             appendageTrans.parent = transform;
             appendageTrans.localPosition = transform.position;
+            hasAppendage = true;
         }
         else Debug.Log("This appendage is already socketed");
     }

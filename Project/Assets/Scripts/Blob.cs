@@ -6,7 +6,7 @@ using UnityEngine;
 public class Blob : MonoBehaviour
 {
 
-    public Socket[] appendageSockets = new Socket[5];
+    public Socket[] appendageSockets;
     private float lastMoveTime = 0;
     public float movementInterval = 0;
     public float movementSpeed = 1;
@@ -19,6 +19,7 @@ public class Blob : MonoBehaviour
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        appendageSockets = GetComponentsInChildren<Socket>();
     }
 
     private void FixedUpdate()
