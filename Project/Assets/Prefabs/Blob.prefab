@@ -139,11 +139,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appendageSockets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6583984948407072350}
+  - {fileID: 1835708765148493593}
+  - {fileID: 8851846133101853355}
+  - {fileID: 7324393855581850933}
+  - {fileID: 9221551169731923096}
   movementInterval: 1
   movementSpeed: 1
   movementBounds: {x: 14, y: 14}
