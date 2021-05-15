@@ -10,10 +10,11 @@ public class Socket : MonoBehaviour
     {
         if(!a.isSocketed)
         {
+            Destroy(a.rb);
             var appendageTrans = a.transform;
             appendage = a;
-            appendageTrans.parent = transform;
-            appendageTrans.localPosition = transform.position;
+            appendageTrans.SetParent(transform,false);
+            appendageTrans.localPosition = Vector2.zero;
             hasAppendage = true;
         }
         else Debug.Log("This appendage is already socketed");

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 114831734425748138}
   - component: {fileID: 114831734425748117}
   - component: {fileID: 114831734425748119}
-  - component: {fileID: 114831734425748118}
   - component: {fileID: 682356139881668323}
+  - component: {fileID: -1679578767420116631}
   m_Layer: 0
   m_Name: Appendage
   m_TagString: Untagged
@@ -101,27 +101,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.08
---- !u!50 &114831734425748118
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114831734425748113}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 5
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &682356139881668323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +115,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSocketed: 0
   socket: {fileID: 2413284627971201287}
+  Side: 
+  Type: 
+  asset: {fileID: 0}
+  appendage: {fileID: 0}
+  rb: {fileID: 0}
+--- !u!50 &-1679578767420116631
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114831734425748113}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6984540748262375218
 GameObject:
   m_ObjectHideFlags: 0

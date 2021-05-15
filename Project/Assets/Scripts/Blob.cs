@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Blob : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class Blob : MonoBehaviour
     private Rigidbody2D _rb;
     private Vector2 desiredLocation = Vector2.zero;
     private float step = 0;
+
+    private int emptySocketIndex = 0;
 
     private void Start()
     {
@@ -36,6 +39,16 @@ public class Blob : MonoBehaviour
         _rb.MovePosition(new Vector2(transform.position.x,transform.position.y) + (desiredDirection * movementSpeed * Time.deltaTime));
     }
 
+
+    private void Update()
+    {
+        if (Keyboard.current.spaceKey.isPressed)
+        {     
+            
+            appendageSockets[0].Attach(FindObjectOfType<Appendage>()); 
+        }
+    }
+
     private void CalculateDesiredLocation()
     {
         var boundsX = movementBounds.x / 2;
@@ -43,4 +56,5 @@ public class Blob : MonoBehaviour
         desiredLocation = new Vector2(UnityEngine.Random.Range(-boundsX,boundsX), UnityEngine.Random.Range(-boundsY,boundsY));
         desiredLocation = desiredLocation * Mathf.PerlinNoise(Time.time, Time.time);
     }
+    
 }
