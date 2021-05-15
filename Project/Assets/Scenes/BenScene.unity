@@ -530,7 +530,6 @@ MonoBehaviour:
   Side: 
   Type: 
   rb: {fileID: 0}
-  parentJoint: {fileID: 0}
 --- !u!4 &515355332 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2404951011885398716, guid: 2a46736da2d8af844a33cca26c7c15ac,
@@ -748,7 +747,7 @@ HingeJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645484262}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 0}
@@ -949,7 +948,6 @@ MonoBehaviour:
   Side: 
   Type: 
   rb: {fileID: 0}
-  parentJoint: {fileID: 0}
 --- !u!4 &662038691
 Transform:
   m_ObjectHideFlags: 0
@@ -975,6 +973,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469614071962498774, guid: f9c94cec8727a6d48a8343faf5269474,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6666666
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469614071962498774, guid: f9c94cec8727a6d48a8343faf5269474,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.6666666
       objectReference: {fileID: 0}
     - target: {fileID: 4469614071962498774, guid: f9c94cec8727a6d48a8343faf5269474,
         type: 3}
@@ -1034,7 +1042,7 @@ PrefabInstance:
     - target: {fileID: 4469614071962498775, guid: f9c94cec8727a6d48a8343faf5269474,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9c94cec8727a6d48a8343faf5269474, type: 3}
@@ -1258,7 +1266,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appendage: {fileID: 0}
-  hasAppendage: 1
 --- !u!4 &885988909
 Transform:
   m_ObjectHideFlags: 0
@@ -1671,7 +1678,6 @@ MonoBehaviour:
   Side: 
   Type: 
   rb: {fileID: 0}
-  parentJoint: {fileID: 0}
 --- !u!1 &1596174724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1905,7 +1911,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appendage: {fileID: 0}
-  hasAppendage: 0
 --- !u!1 &2093974709
 GameObject:
   m_ObjectHideFlags: 0
@@ -2193,7 +2198,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appendage: {fileID: 0}
-  hasAppendage: 0
 --- !u!4 &1840755113922951077
 Transform:
   m_ObjectHideFlags: 0
@@ -2322,7 +2326,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appendage: {fileID: 0}
-  hasAppendage: 0
 --- !u!1 &7439875703866155131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2353,7 +2356,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appendage: {fileID: 0}
-  hasAppendage: 0
 --- !u!114 &9221551169810281932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2367,4 +2369,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appendage: {fileID: 0}
-  hasAppendage: 0

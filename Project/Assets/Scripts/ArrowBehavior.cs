@@ -8,15 +8,26 @@ public class ArrowBehavior : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    private ParticleSystem onHitParticles;
+
+    private bool ignoreTrigger;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.up * speed;
+
+        onHitParticles = GetComponentInChildren<ParticleSystem>();
+        ignoreTrigger = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (ignoreTrigger)
+            return;
+        ignoreTrigger = true;
+
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
         transform.parent = collision.transform;
         // selector.Select(collision.GetComponent<Shootable>());
@@ -27,6 +38,7 @@ public class ArrowBehavior : MonoBehaviour
         Destroy(rb);
         Destroy(GetComponent<BoxCollider2D>());
         Destroy(this);
-        
+
+        onHitParticles.Play();
     }
 }
