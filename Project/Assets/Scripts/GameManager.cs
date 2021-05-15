@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,8 +17,10 @@ public class GameManager : MonoBehaviour
     static public GameObject[] selected = new GameObject[2];
     public int score = 0;
     public float timeLimit = 120;
-    public Text timeText, scoreText;
+    public TextMeshProUGUI timeText, scoreText;
     private float remainingTime;
+    public GameObject matchParticleBurst;
+    
 
     
     /// <summary>
@@ -64,7 +68,7 @@ public class GameManager : MonoBehaviour
     {
         if (!scoreText)
             return;
-        scoreText.text = score + "!";
+        scoreText.text = "" + score;
     }
     
     
@@ -161,9 +165,12 @@ public class GameManager : MonoBehaviour
             if (totalNumLeftArms == totalNumRightArms) points += totalNumArms;
             if (totalNumLeftLegs == totalNumRightLegs) points += totalNumLegs;
         }
-        score += points;
+        AddScore(points);
         
         // Play particles
+        Instantiate(matchParticleBurst,blob1.transform.position,quaternion.identity);
+        Instantiate(matchParticleBurst,blob2.transform.position,quaternion.identity);
+        
         Destroy(blob1.gameObject);
         Destroy(blob2.gameObject);
     }
