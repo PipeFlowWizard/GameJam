@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.Interactions;
 
-public static class GameManager
+public static class GameManager2
 {
    static public GameObject selectedObject1, selectedObject2;
     static public int selectedArrow = 1;
