@@ -21,8 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b954c9d2-2f10-4e49-be4c-2f9be9620698" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ElijahScene2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ElijahScene2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArrowBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArrowBehavior.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/RecipeGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RecipeGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,13 +56,13 @@
         <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Socket.cs" />
         <option value="$PROJECT_DIR$/Assets/GameManager2.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ArrowBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AppendageSpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Blob.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Appendage.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/RecipeGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RecipeGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArrowBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
       </list>
     </option>
   </component>
@@ -112,7 +114,7 @@
       <option name="presentableId" value="Default" />
       <updated>1621095832147</updated>
       <workItem from="1621095840751" duration="4537000" />
-      <workItem from="1621108629076" duration="15621000" />
+      <workItem from="1621108629076" duration="17329000" />
     </task>
     <servers />
   </component>
@@ -136,11 +138,11 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="821" y="323" width="896" height="912" key="run.anything.popup" timestamp="1621125677623">
+    <state x="821" y="323" width="896" height="912" key="run.anything.popup" timestamp="1621126895877">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="-1304" y="240" width="672" height="677" key="run.anything.popup/0.0.2560.1400/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621112590694" />
-    <state x="821" y="323" width="896" height="912" key="run.anything.popup/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1621125677623" />
+    <state x="821" y="323" width="896" height="912" key="run.anything.popup/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1621126895877" />
     <state x="821" y="233" width="896" height="910" key="search.everywhere.popup" timestamp="1621126154847">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

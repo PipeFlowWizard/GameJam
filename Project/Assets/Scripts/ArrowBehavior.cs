@@ -36,7 +36,7 @@ public class ArrowBehavior : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
         transform.parent = collision.transform;
         // selector.Select(collision.GetComponent<Shootable>());
-        Debug.Log("Arrow hit GameObject: " + collision.gameObject.transform.root.gameObject + " With tag: " + collision.transform.root.gameObject.tag);
+        //Debug.Log("Arrow hit GameObject: " + collision.gameObject.transform.root.gameObject + " With tag: " + collision.transform.root.gameObject.tag);
         GameManager.Instance.AssignSelection(collision.gameObject);
         
         

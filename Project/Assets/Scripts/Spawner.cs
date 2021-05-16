@@ -61,10 +61,9 @@ public class Spawner : MonoBehaviour
     public void SpawnAppendage()
     {
         Vector2 spawnPos = GenerateSpawnPosition();
-        var item = Instantiate(limbPrefabs[Random.Range(0, limbPrefabs.Length)], spawnPos, Quaternion.identity);
+        var item = Instantiate(limbPrefabs[Random.Range(0, limbPrefabs.Length)], spawnPos, Quaternion.Euler(0,0,UnityEngine.Random.Range(0,360)));
         var rb = item.GetComponent<Rigidbody2D>();
-        rb.AddForce(UnityEngine.Random.insideUnitCircle);
-        rb.AddTorque(UnityEngine.Random.Range(-20,20));
+        rb.AddForce(UnityEngine.Random.insideUnitCircle * 2.5f,ForceMode2D.Impulse);
     }
 
     private Vector2 GenerateSpawnPosition()
