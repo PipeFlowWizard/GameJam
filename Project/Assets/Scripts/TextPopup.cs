@@ -13,13 +13,22 @@ public class TextPopup : MonoBehaviour
     private Color _textColor;
     private float disappearSpeed = 4f;
     float moveYSpeed = 10f;
-    
+
 
     public TextPopup Create(Vector2 position, string text)
     {
         Transform textPopupTransform = Instantiate(textPopupPrefab, position + new Vector2(UnityEngine.Random.Range(-2,2),UnityEngine.Random.Range(-2,2)), Quaternion.identity);
         TextPopup textPopup = textPopupTransform.GetComponent<TextPopup>();
         textPopup.Setup(text);
+        return textPopup;
+    }
+    
+    public TextPopup Create(Vector2 position, string text, Color color)
+    {
+        Transform textPopupTransform = Instantiate(textPopupPrefab, position + new Vector2(UnityEngine.Random.Range(-2,2),UnityEngine.Random.Range(-2,2)), Quaternion.identity);
+        TextPopup textPopup = textPopupTransform.GetComponent<TextPopup>();
+        textPopup.Setup(text);
+        textPopup._textMesh.color = color;
         return textPopup;
     }
     

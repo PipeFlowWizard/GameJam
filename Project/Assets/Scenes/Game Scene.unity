@@ -2206,6 +2206,13 @@ MonoBehaviour:
   selectedMaterial: {fileID: 2100000, guid: 110558100f0f4454988e1fb1308b248b, type: 2}
   RecipeDisplay: {fileID: 501038863}
   textPopup: {fileID: 1442957378}
+  flavourText:
+  - Nice!
+  - Spicy!
+  - Tasty!
+  - Scrumptious!
+  - Delicious!
+  - Hot!
   blobPopulation: 0
   maxBlobPopulation: 10
   numAppendages: 0

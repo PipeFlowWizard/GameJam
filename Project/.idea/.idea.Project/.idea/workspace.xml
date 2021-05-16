@@ -20,10 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b954c9d2-2f10-4e49-be4c-2f9be9620698" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Breathe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Breathe.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Blob 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Blob 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Blob 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Blob 2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Blob.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Blob.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Left_Arm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Left_Arm.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Left_Leg.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Left_Leg.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Right_Arm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Right_Arm.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Right_Leg.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Right_Leg.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game Scene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TextPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TextPopup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,9 +75,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Blob.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TextPopupTest.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TextPopup.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Breathe.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RectBreathe.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TextPopup.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       </list>
     </option>
@@ -124,7 +131,7 @@
       <updated>1621095832147</updated>
       <workItem from="1621095840751" duration="4537000" />
       <workItem from="1621108629076" duration="28205000" />
-      <workItem from="1621184140283" duration="5691000" />
+      <workItem from="1621184140283" duration="9281000" />
     </task>
     <servers />
   </component>

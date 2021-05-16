@@ -7,6 +7,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
     public Material defaultSpriteMaterial, selectedMaterial;
     public RecipeDisplay RecipeDisplay;
     public TextPopup textPopup;
+    public string[] flavourText;
 
     public int blobPopulation = 0;
     public int maxBlobPopulation = 10;
@@ -131,7 +133,6 @@ public class GameManager : MonoBehaviour
         // Ensure that the object is an appendage or a blob
         if (mainObject.CompareTag("Appendage") || mainObject.CompareTag("Blob"))
         {
-            textPopup.Create(mainObject.transform.position, "Hit");
             if (selected[0] == null)
             {
                 selected[0] = mainObject;
@@ -158,17 +159,29 @@ public class GameManager : MonoBehaviour
                 if (selected[0].CompareTag("Appendage") && selected[1].CompareTag("Appendage"))
                 {
                     selected[0].GetComponent<Appendage>().AttachToMe(selected[1].GetComponent<Appendage>());
+                    AddScore(-20);
+                    textPopup.Create(selected[1].transform.position, "-20",Color.red);
+                    textPopup.Create(selected[1].transform.position, "Limbs Wasted!");
                 }
 
                 //Case 3: Blob x Appendage || Appendage x Blob
                 if (selected[0].CompareTag("Blob") && selected[1].CompareTag("Appendage"))
                 {
                     selected[0].GetComponent<Blob>().Attach(selected[1].GetComponent<Appendage>());
+                    AddScore(10);
+                    textPopup.Create(selected[1].transform.position, "+10",Color.green);
+                    if(flavourText != null)
+                        textPopup.Create(selected[1].transform.position, flavourText[UnityEngine.Random.Range(0,flavourText.Length)]);
+
                 }
 
                 if (selected[0].CompareTag("Appendage") && selected[1].CompareTag("Blob"))
                 {
                     selected[1].GetComponent<Blob>().Attach(selected[0].GetComponent<Appendage>());
+                    AddScore(10);
+                    textPopup.Create(selected[1].transform.position, "+10",Color.green);
+                    if(flavourText != null)
+                        textPopup.Create(selected[1].transform.position, flavourText[UnityEngine.Random.Range(0,flavourText.Length)]);
                 }
 
                 SetSpriteRendererMaterialInAllChildren(selected[0].transform, defaultSpriteMaterial);
@@ -201,18 +214,31 @@ public class GameManager : MonoBehaviour
         // if blobs have nothing on them, - 5 points
         if (totalNumLegs == 0 && totalNumArms == 0)
         {
-            points = -5;
+            points = -50;
+            textPopup.Create(selected[1].transform.position, "Meh...");
         }
         else
         {
-            points += totalNumArms;
-            points += totalNumLegs;
-
-            if (totalNumLeftArms == totalNumRightArms) points += totalNumArms;
-            if (totalNumLeftLegs == totalNumRightLegs) points += totalNumLegs;
-        }
+            points += totalNumArms * 10;
+            points += totalNumLegs * 10;
         
-        AddScore(points + CheckIfSatisfyRecipe(blob1) + CheckIfSatisfyRecipe(blob2));
+            if (totalNumLeftArms == totalNumRightArms)
+            {
+                textPopup.Create(selected[1].transform.position, "Matching Arms!");
+                points += totalNumArms * 10;
+            }
+            if (totalNumLeftLegs == totalNumRightLegs)
+            {
+                textPopup.Create(selected[1].transform.position, "Matching Legs!");
+                points += totalNumLegs * 10;
+            }
+            
+        }
+
+        points += CheckIfSatisfyRecipe(blob1) + CheckIfSatisfyRecipe(blob2);
+        var color = points >= 0 ? Color.green : Color.red;
+        textPopup.Create(selected[1].transform.position, "+" + points.ToString(), color);
+        AddScore(points);
         
         // Play particles
         impulse.GenerateImpulse();
@@ -252,21 +278,27 @@ public class GameManager : MonoBehaviour
     {
         int points = 0;
         bool perfect = false;
+        // If there is a basic match
         if (blob.NumArms == recipe.NumArms && blob.NumLegs == recipe.NumLegs)
         {
-            points += 20;
-            
+            var bonusTime = 5f;
+            points += 200;
+            // If there is a perfect match
             if (blob.numLeftArms == recipe.NumLeftArms && blob.numRightArms == recipe.NumRightArms &&
                 blob.numLeftLegs == recipe.NumLeftLegs && blob.numRightLegs == recipe.NumRightLegs)
             {
-                points += 20;
+                bonusTime += 10f;   
+                points += 200;
                 perfect = true;
             }
+
+            remainingTime += bonusTime;
+            textPopup.Create(blob.transform.position, "+" + bonusTime + "s",Color.yellow);
             recipe.GenerateRecipe();
             RecipeDisplay.UpdateRecipe(recipe.NumLeftArms,recipe.NumRightArms,recipe.NumLeftLegs, recipe.NumRightLegs);
             if(perfect)
-                textPopup.Create(blob.transform.position, "Perfect Match!");
-            else textPopup.Create(blob.transform.position, "Match");
+                textPopup.Create(blob.transform.position, "Perfect Match!",Color.yellow);
+            else textPopup.Create(blob.transform.position, "Match",Color.yellow);
         }
         
 
