@@ -105,8 +105,8 @@ TextureImporter:
       name: Body_Type01_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 313
+        x: 31
+        y: 306
         width: 375
         height: 329
       alignment: 0

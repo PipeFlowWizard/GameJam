@@ -139,6 +139,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318cdd09631bfd442b72c0763526444f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  faceSprites:
+  - {fileID: -7679655350708864086, guid: 12d1704426aca8044abc395c242d4575, type: 3}
+  - {fileID: 1502669920459035031, guid: de46804757fc369499c8fea3b7a8fae7, type: 3}
+  - {fileID: 4335828669972296227, guid: bd5ede9f1a7ced0468bf70ac7b8e35da, type: 3}
+  - {fileID: 394453485301369247, guid: 661ca7fe37d486a4ba131c60879011b2, type: 3}
+  - {fileID: -3085102977751867786, guid: c247c4f572f0e73449fc1a036c1f5a4b, type: 3}
   appendageSockets:
   - {fileID: 6583984948407072350}
   - {fileID: 1835708765148493593}
@@ -147,7 +153,10 @@ MonoBehaviour:
   - {fileID: 9221551169731923096}
   movementInterval: 1
   movementSpeed: 1
+  baseMovementSpeed: 1
   movementBounds: {x: 20, y: 20}
+  socketsUsed: 0
+  speedScalar: 0.5
   numRightLegs: 0
   numLeftLegs: 0
   numRightArms: 0
