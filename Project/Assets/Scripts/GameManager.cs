@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
     {
         if (!timeText)
             return;
-        timeText.text = (int)remainingTime / 60 + " : " + remainingTime % 60;
+        timeText.text = (int)remainingTime / 60 + " : " + (remainingTime % 60).ToString("0.00");
     }
     
 

@@ -11,7 +11,7 @@ public class RecipeDisplay : MonoBehaviour
 
     private SpriteRenderer[] rend;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rend = GetComponentsInChildren<SpriteRenderer>();
         UpdateRecipe(1, 0, 2, 0);
@@ -27,25 +27,25 @@ public class RecipeDisplay : MonoBehaviour
     public void UpdateRecipe(int lA, int rA, int lL, int rL)
     {
         int index = 1, n = lA;
-        while(n > 0)
+        while(n > 0 && index < rend.Length)
         {
             rend[index++].sprite = leftArm;
             n--;
         }
         n = rA;
-        while (n > 0)
+        while (n > 0 && index < rend.Length)
         {
             rend[index++].sprite = rightArm;
             n--;
         }
         n = lL;
-        while (n > 0)
+        while (n > 0 && index < rend.Length)
         {
             rend[index++].sprite = leftLeg;
             n--;
         }
         n = rL;
-        while (n > 0)
+        while (n > 0 && index < rend.Length)
         {
             rend[index++].sprite = rightLeg;
             n--;
