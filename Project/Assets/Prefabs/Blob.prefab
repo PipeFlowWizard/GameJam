@@ -154,7 +154,7 @@ MonoBehaviour:
   movementInterval: 1
   movementSpeed: 1
   baseMovementSpeed: 1
-  movementBounds: {x: 20, y: 20}
+  movementBounds: {x: 50, y: 30}
   socketsUsed: 0
   speedScalar: 0.5
   numRightLegs: 0

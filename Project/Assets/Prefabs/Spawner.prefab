@@ -43,6 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2fee89a4f8912347a580f8a5cb038d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  limbSpawnDelay: 1
+  blobSpawnDelay: 3
+  spawnEffect: {fileID: 624373773899588764, guid: 2ccb0d7f0df49fa4eac4f67281132cb3,
+    type: 3}
   blobPrefabs:
   - {fileID: 2098716338790316924, guid: e271a7be0bf8e06408a25710e2f03f6e, type: 3}
   - {fileID: 4501033717826471669, guid: e2b97b12faba495448c8f002644d7e7f, type: 3}

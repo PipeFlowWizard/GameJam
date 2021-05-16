@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
 {
     public float limbSpawnDelay, blobSpawnDelay;
 
+    public GameObject spawnEffect;
     public GameObject[] blobPrefabs, limbPrefabs;
     public Vector2 spawnBounds;
 
@@ -13,7 +14,7 @@ public class Spawner : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireCube(Vector3.zero, spawnBounds);
+        Gizmos.DrawWireCube(Vector3.zero, spawnBounds * 2);
     }
 
     private void Update()
@@ -24,16 +25,57 @@ public class Spawner : MonoBehaviour
         if(limbTimer > limbSpawnDelay)
         {
             limbTimer = 0;
-            SpawnAppendage();
+            //SpawnAppendage();
+            InitiateSpawnProcess(SpawnAppendageAtPosition);
         }
 
         if(blobTimer > blobSpawnDelay)
         {
             blobTimer = 0;
             // pass a random int if you wnat appendages on the blob
-            SpawnBlob();
+            if (Random.Range(0, 100) < 5)
+                InitiateSpawnProcess(SpawnBlobWithLimbsAtPosition);
+            else
+                InitiateSpawnProcess(SpawnBlobAtPosition);
+            //SpawnBlob();
         }
     }
+
+    private void InitiateSpawnProcess(System.Action<Vector2> a)
+    {
+        Vector2 spawnPos = GenerateSpawnPosition();
+        Instantiate(spawnEffect, spawnPos, Quaternion.identity).
+            GetComponent<SpawnPrefabWithEffect>().spawnFunction = a;
+    }
+
+    public void SpawnBlobAtPosition(Vector2 v)
+    {
+        Instantiate(blobPrefabs[Random.Range(0, blobPrefabs.Length)], v, Quaternion.identity);
+    }
+
+    public void SpawnBlobWithLimbsAtPosition(Vector2 v)
+    {
+        GameObject item = Instantiate(blobPrefabs[Random.Range(0, blobPrefabs.Length)], v, Quaternion.identity);
+        var rb = item.GetComponent<Rigidbody2D>();
+        rb.AddForce(UnityEngine.Random.insideUnitCircle);
+        rb.AddTorque(UnityEngine.Random.Range(0, 2));
+
+        Blob blob = item.GetComponent<Blob>();
+        int n = Random.Range(0, 5);
+        while (n > 0)
+        {
+            blob.Attach(Instantiate(limbPrefabs[Random.Range(0, limbPrefabs.Length)]).GetComponent<Appendage>());
+            n--;
+        }
+    }
+
+    public void SpawnAppendageAtPosition(Vector2 v)
+    {
+        var item = Instantiate(limbPrefabs[Random.Range(0, limbPrefabs.Length)], v, Quaternion.Euler(0, 0, UnityEngine.Random.Range(0, 360)));
+        var rb = item.GetComponent<Rigidbody2D>();
+        rb.AddForce(UnityEngine.Random.insideUnitCircle * 2.5f, ForceMode2D.Impulse);
+    }
+
 
     public GameObject SpawnBlob()
     {
