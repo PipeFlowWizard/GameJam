@@ -6,6 +6,7 @@ using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class GameManager : MonoBehaviour
     public int blobPopulation = 0;
     public int maxBlobPopulation = 10;
     public int numAppendages = 0;
-    public RecipeGenerator recipe;
+    public Recipe recipe;
 
 
 
@@ -48,7 +49,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        recipe = new RecipeGenerator();
+        recipe = new Recipe();
+        recipe.GenerateRecipe();
         impulse = GetComponent<CinemachineImpulseSource>();
         score = 0;
         UpdateScoreDisplay();
@@ -145,14 +147,13 @@ public class GameManager : MonoBehaviour
     /// <param name="other">Blob to be matched with</param>
     public void MatchBlobs(Blob blob1, Blob blob2)
     {
-        NextRecipe();
         var totalNumLegs = blob1.NumLegs + blob2.NumLegs;
         var totalNumArms = blob1.NumArms + blob2.NumArms;
         var totalNumLeftArms = blob1.numLeftArms + blob2.numLeftArms;
         var totalNumRightArms = blob1.numRightArms + blob2.numRightArms;
         var totalNumLeftLegs = blob1.numLeftLegs + blob2.numLeftLegs;
         var totalNumRightLegs = blob1.numRightLegs + blob2.numRightLegs;
-
+        
         int points = 0;
 
         // Criteria for now
@@ -169,9 +170,9 @@ public class GameManager : MonoBehaviour
             if (totalNumLeftArms == totalNumRightArms) points += totalNumArms;
             if (totalNumLeftLegs == totalNumRightLegs) points += totalNumLegs;
         }
-
-        AddScore(points);
-
+        
+        AddScore(points + CheckIfSatisfyRecipe(blob1) + CheckIfSatisfyRecipe(blob2));
+        
         // Play particles
         impulse.GenerateImpulse();
         Instantiate(matchParticleBurst, blob1.transform.position, quaternion.identity);
@@ -180,18 +181,7 @@ public class GameManager : MonoBehaviour
         Destroy(blob1.gameObject);
         Destroy(blob2.gameObject);
     }
-
-    private String NextRecipe()
-    {
-        string recipeString = "";
-        foreach (var ingredient in recipe.GenerateRecipe())
-        {
-            recipeString += ingredient + " ";
-        }
-
-        Debug.Log(recipeString);
-        return recipeString;
-    }
+    
 
     private void SetSpriteRendererMaterialInAllChildren(Transform t, Material mat)
     {
@@ -204,6 +194,34 @@ public class GameManager : MonoBehaviour
             SetSpriteRendererMaterialInAllChildren(child, mat);
         }
     }
+
+    /// <summary>
+    /// Checks the degree to which a blob conforms to a recipe
+    /// If it doesn't match at all, return 0
+    /// </summary>
+    /// <param name="blob">the blob to be checked</param>
+    /// <returns></returns>
+    public int CheckIfSatisfyRecipe(Blob blob)
+    {
+        int points = 0;
+        if (blob.NumArms == recipe.NumArms && blob.NumLegs == recipe.NumLegs)
+        {
+            points += 20;
+            
+            if (blob.numLeftArms == recipe.NumLeftArms && blob.numRightArms == recipe.NumRightArms &&
+                blob.numLeftLegs == recipe.NumLeftLegs && blob.numRightLegs == recipe.NumRightLegs)
+            {
+                points += 20;
+
+            }
+            recipe.GenerateRecipe();
+            Debug.Log("match!");
+        }
+
+        return points;
+    }
+    
+    
 }
 
 

@@ -120,14 +120,8 @@ public class Blob : MonoBehaviour
             {
                 return socket;
             }
-
             socketsUsed += 1;
         }
-
         return null;
     }
-
-    
-    
-    
 }
