@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class Blob : MonoBehaviour
 {
 
+    public Sprite[] faceSprites;
     public Socket[] appendageSockets;
     public float movementInterval = 0;
     public float movementSpeed = 1;
@@ -15,6 +16,7 @@ public class Blob : MonoBehaviour
     
     private float lastMoveTime = 0;
     private Rigidbody2D _rb;
+    private SpriteRenderer rend;
     private Vector2 desiredLocation = Vector2.zero;
     private float step = 0;
     private int emptySocketIndex = 0;
@@ -34,6 +36,7 @@ public class Blob : MonoBehaviour
         
         CalculateDesiredLocation();
         _rb = GetComponent<Rigidbody2D>();
+        rend = GetComponent<SpriteRenderer>();
         appendageSockets = GetComponentsInChildren<Socket>();
     }
 
@@ -76,6 +79,10 @@ public class Blob : MonoBehaviour
             var socket = GetOpenSocket();
             socket.Attach(appendage);
 
+            int numLimbs = numLeftArms + numLeftLegs + numRightArms + numRightLegs;
+            if (numLimbs < faceSprites.Length)
+                rend.sprite = faceSprites[numLimbs];
+
             if (appendage.Type == "Arm")
             {
                 if (appendage.Side == "Left") numLeftArms++;
@@ -86,7 +93,6 @@ public class Blob : MonoBehaviour
                 if (appendage.Side == "Left") numLeftLegs++;
                 if (appendage.Side == "Right") numRightLegs++;
             }
-            
         }
         
     }
