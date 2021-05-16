@@ -20,8 +20,7 @@ public class TopDownCharacterController : MonoBehaviour
         input = GetComponent<ControlKey>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         if (input["up"])
             Move(Vector2.up);
@@ -32,7 +31,11 @@ public class TopDownCharacterController : MonoBehaviour
             Move(Vector2.right);
         if (input["left"])
             Move(Vector2.left);
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         float angle = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x);
         angle *= (180 / Mathf.PI);
