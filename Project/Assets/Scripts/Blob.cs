@@ -90,7 +90,8 @@ public class Blob : MonoBehaviour
             if (numLimbs < faceSprites.Length && rend)
                 rend.sprite = faceSprites[numLimbs];
             float n = 1 - numLimbs * .15f;
-            rend.color = new Color(1, n, n);
+            if (rend)
+                rend.color = new Color(1, n, n);
 
             if (appendage.Type == "Arm")
             {
