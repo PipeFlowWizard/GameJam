@@ -6,7 +6,7 @@ using TMPro;
 
 public class RecipeDisplay : MonoBehaviour
 {
-    public Sprite leftArm, rightArm, leftLeg, rightLeg;
+    public Sprite leftArm, rightArm, leftLeg, rightLeg, empty;
     public TextMeshProUGUI lArm, rArm, lLeg, rLeg;
 
     private SpriteRenderer[] rend;
@@ -52,14 +52,19 @@ public class RecipeDisplay : MonoBehaviour
         }
         while(index < rend.Length)
         {
-            rend[index++].sprite = null;
+            rend[index++].sprite = empty;
         }
+
+        //for(int i = 0; i < rend.Length; i++)
+        //{
+        //    rend[i].rectTransform.pivot = rend[i].sprite.pivot / (rend[i].rectTransform.sizeDelta);
+        //}
 
         if (!lArm)
             return;
-        lArm.text = lA + "";
-        rArm.text = rA + "";
-        lLeg.text = lL + "";
-        rLeg.text = rL + "";
+        lArm.text = "Left Arms: " + lA;
+        rArm.text = "Right Arms: " + rA;
+        lLeg.text = "Left Legs: " + lL;
+        rLeg.text = "Right Legs: " + rL;
     }
 }
