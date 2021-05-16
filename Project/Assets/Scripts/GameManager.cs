@@ -10,14 +10,15 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
+
     public static GameManager Instance
     {
         get => _instance;
     }
-    
+
     static public GameObject[] selected = new GameObject[2];
     public int score = 0;
-    public TextMeshProUGUI  populationText, scoreText;
+    public TextMeshProUGUI populationText, scoreText;
     public GameObject matchParticleBurst;
     public CinemachineVirtualCamera cam;
     public CinemachineImpulseSource impulse;
@@ -25,9 +26,10 @@ public class GameManager : MonoBehaviour
     public int blobPopulation = 0;
     public int maxBlobPopulation = 10;
     public int numAppendages = 0;
-    
+    public RecipeGenerator recipe;
 
-    
+
+
     /// <summary>
     /// Instantiate singleton
     /// </summary>
@@ -36,30 +38,29 @@ public class GameManager : MonoBehaviour
         if (_instance != null && _instance != this)
         {
             Destroy(this.gameObject);
-        } else {
+        }
+        else
+        {
             _instance = this;
         }
     }
-    
+
     void Start()
     {
+        recipe = new RecipeGenerator();
         impulse = GetComponent<CinemachineImpulseSource>();
         score = 0;
         UpdateScoreDisplay();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-      
-    }
+
 
     public void AddScore(int amount)
     {
         score += amount;
         UpdateScoreDisplay();
     }
-    
+
 
     private void UpdateScoreDisplay()
     {
@@ -67,9 +68,9 @@ public class GameManager : MonoBehaviour
             return;
         scoreText.text = "" + score;
     }
-    
-    
-    
+
+
+
     /// <summary>
     /// Called by the arrow behaviour when an arrow hits an object
     /// </summary>
@@ -79,7 +80,8 @@ public class GameManager : MonoBehaviour
         // Get the top most object in the gameobject tree
         var mainObject = gameObject.transform.root.gameObject;
 
-        if (mainObject.CompareTag("Appendage") && (mainObject.GetComponent<Appendage>().isSocketed || mainObject.GetComponent<Appendage>().socket.HasAppendage))
+        if (mainObject.CompareTag("Appendage") && (mainObject.GetComponent<Appendage>().isSocketed ||
+                                                   mainObject.GetComponent<Appendage>().socket.HasAppendage))
         {
             Debug.Log("This appendage is already attached to something");
             return;
@@ -96,7 +98,7 @@ public class GameManager : MonoBehaviour
             {
                 selected[1] = mainObject;
             }
-            
+
             // If two objects are selected, try to attach them depending on the item combo
             if (selected[0] != null && selected[1] != null)
             {
@@ -107,11 +109,13 @@ public class GameManager : MonoBehaviour
                     // Pair them together
                     MatchBlobs(selected[0].GetComponent<Blob>(), selected[1].GetComponent<Blob>());
                 }
+
                 //Case 2: Appendage x Appendage
                 if (selected[0].CompareTag("Appendage") && selected[1].CompareTag("Appendage"))
                 {
                     selected[0].GetComponent<Appendage>().AttachToMe(selected[1].GetComponent<Appendage>());
                 }
+
                 //Case 3: Blob x Appendage || Appendage x Blob
                 if (selected[0].CompareTag("Blob") && selected[1].CompareTag("Appendage"))
                 {
@@ -125,10 +129,10 @@ public class GameManager : MonoBehaviour
 
 
                 // Empty the selected items array
-                Array.Clear(selected,0,2);
+                Array.Clear(selected, 0, 2);
 
             }
-            
+
         }
 
     }
@@ -139,15 +143,16 @@ public class GameManager : MonoBehaviour
     /// <param name="other">Blob to be matched with</param>
     public void MatchBlobs(Blob blob1, Blob blob2)
     {
+        NextRecipe();
         var totalNumLegs = blob1.NumLegs + blob2.NumLegs;
         var totalNumArms = blob1.NumArms + blob2.NumArms;
         var totalNumLeftArms = blob1.numLeftArms + blob2.numLeftArms;
         var totalNumRightArms = blob1.numRightArms + blob2.numRightArms;
         var totalNumLeftLegs = blob1.numLeftLegs + blob2.numLeftLegs;
         var totalNumRightLegs = blob1.numRightLegs + blob2.numRightLegs;
-        
+
         int points = 0;
-        
+
         // Criteria for now
         // if blobs have nothing on them, - 5 points
         if (totalNumLegs == 0 && totalNumArms == 0)
@@ -158,20 +163,34 @@ public class GameManager : MonoBehaviour
         {
             points += totalNumArms;
             points += totalNumLegs;
-            
+
             if (totalNumLeftArms == totalNumRightArms) points += totalNumArms;
             if (totalNumLeftLegs == totalNumRightLegs) points += totalNumLegs;
         }
+
         AddScore(points);
-        
+
         // Play particles
         impulse.GenerateImpulse();
-        Instantiate(matchParticleBurst,blob1.transform.position,quaternion.identity);
-        Instantiate(matchParticleBurst,blob2.transform.position,quaternion.identity);
-        
+        Instantiate(matchParticleBurst, blob1.transform.position, quaternion.identity);
+        Instantiate(matchParticleBurst, blob2.transform.position, quaternion.identity);
+
         Destroy(blob1.gameObject);
         Destroy(blob2.gameObject);
     }
 
-   
+    private String NextRecipe()
+    {
+        string recipeString = "";
+        foreach (var ingredient in recipe.GenerateRecipe())
+        {
+            recipeString += ingredient + " ";
+        }
+
+        Debug.Log(recipeString);
+        return recipeString;
+    }
+
 }
+
+
