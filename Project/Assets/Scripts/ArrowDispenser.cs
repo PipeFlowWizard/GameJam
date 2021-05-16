@@ -19,6 +19,8 @@ public class ArrowDispenser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenu.paused)
+            return;
         if (input["fire"])
         {
             Instantiate(arrowPrefab, transform.position + transform.up,

@@ -36,6 +36,8 @@ public class TopDownCharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenu.paused)
+            return;
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         float angle = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x);
         angle *= (180 / Mathf.PI);
