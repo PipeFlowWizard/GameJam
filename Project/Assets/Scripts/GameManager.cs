@@ -232,7 +232,8 @@ public class GameManager : MonoBehaviour
                 textPopup.Create(selected[1].transform.position, "Matching Legs!");
                 points += totalNumLegs * 10;
             }
-            
+
+            GetComponent<AudioSource>().Play();
         }
 
         points += CheckIfSatisfyRecipe(blob1) + CheckIfSatisfyRecipe(blob2);
