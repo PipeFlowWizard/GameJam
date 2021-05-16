@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     static public GameObject[] selected = new GameObject[2];
     public int score = 0;
-    public TextMeshProUGUI populationText, scoreText, timeText;
+    public TextMeshProUGUI populationText, scoreText, timeText, endScoreText;
     public GameObject matchParticleBurst;
     public CinemachineVirtualCamera cam;
     private CinemachineImpulseSource impulse;
@@ -69,6 +69,8 @@ public class GameManager : MonoBehaviour
     {
         remainingTime -= Time.deltaTime;
         DisplayRemainingTime();
+        if (remainingTime < 0)
+            EndGame();
     }
 
     private void DisplayRemainingTime()
@@ -96,6 +98,13 @@ public class GameManager : MonoBehaviour
     public void UpdatePopulationDisplay()
     {
         populationText.text = "" + blobPopulation;
+    }
+
+    private void EndGame()
+    {
+        Time.timeScale = 0;
+        endScoreText.text = "Final Score :" + score;
+        endScoreText.transform.root.gameObject.SetActive(true);
     }
 
 

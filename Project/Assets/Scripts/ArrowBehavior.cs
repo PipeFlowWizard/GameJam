@@ -35,11 +35,7 @@ public class ArrowBehavior : MonoBehaviour
 
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
         transform.parent = collision.transform;
-        // selector.Select(collision.GetComponent<Shootable>());
-        //Debug.Log("Arrow hit GameObject: " + collision.gameObject.transform.root.gameObject + " With tag: " + collision.transform.root.gameObject.tag);
-        GameManager.Instance.AssignSelection(collision.gameObject);
-        
-        
+
         Destroy(rb);
         Destroy(GetComponent<BoxCollider2D>());
         Destroy(this);
@@ -63,5 +59,7 @@ public class ArrowBehavior : MonoBehaviour
         }
         asource.clip = toPlay;
         asource.Play();
+        
+        GameManager.Instance.AssignSelection(collision.gameObject);
     }
 }

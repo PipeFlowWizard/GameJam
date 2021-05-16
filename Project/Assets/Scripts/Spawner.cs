@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public float limbSpawnDelay, blobSpawnDelay;
+    public int maxBlobs = 5;
 
     public GameObject spawnEffect;
     public GameObject[] blobPrefabs, limbPrefabs;
@@ -36,6 +37,7 @@ public class Spawner : MonoBehaviour
             // if (Random.Range(0, 100) < 5)
             //     InitiateSpawnProcess(SpawnBlobWithLimbsAtPosition);
             // else
+            if(FindObjectsOfType<Blob>().Length < maxBlobs)
                 InitiateSpawnProcess(SpawnBlobAtPosition);
                 //SpawnBlob();
         }

@@ -17,7 +17,14 @@ public class Menu : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(nameOfSceneToLoad);
+        Time.timeScale = 1;
         //starts startingscene
+    }
+
+    public void LoadScene(string s)
+    {
+        SceneManager.LoadScene(s);
+        Time.timeScale = 1;
     }
 
     public void AdjustVolume(float val)

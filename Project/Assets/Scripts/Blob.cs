@@ -22,7 +22,7 @@ public class Blob : MonoBehaviour
     private Rigidbody2D _rb;
     private SpriteRenderer rend;
     private Vector2 desiredLocation = Vector2.zero;
-    private int emptySocketIndex = 0;
+    //private int emptySocketIndex = 0;
 
     public int numRightLegs = 0;
     public int numLeftLegs = 0;
