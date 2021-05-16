@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class DisplaySelectedItem : MonoBehaviour
@@ -8,11 +9,11 @@ public class DisplaySelectedItem : MonoBehaviour
     public Sprite blob, leftArm, rightArm, leftLeg, rightLeg, empty;
     public TextMeshProUGUI text;
 
-    private SpriteRenderer rend;
+    private Image rend;
     // Start is called before the first frame update
     void Start()
     {
-        rend = GetComponent<SpriteRenderer>();
+        rend = GetComponent<Image>();
         DisplayNoSelection();
     }
 
@@ -75,6 +76,6 @@ public class DisplaySelectedItem : MonoBehaviour
     private void SetText(string s)
     {
         if (text)
-            text.text = s;
+            text.text = "Selected:\n" + s;
     }
 }

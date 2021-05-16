@@ -136,6 +136,7 @@ public class GameManager : MonoBehaviour
             {
                 selected[0] = mainObject;
                 SetSpriteRendererMaterialInAllChildren(mainObject.transform, selectedMaterial);
+                FindObjectOfType<DisplaySelectedItem>().UpdateDisplay(mainObject);
             }
             else if (selected[1] == null && (selected[0] != mainObject))
             {
@@ -171,6 +172,7 @@ public class GameManager : MonoBehaviour
                 }
 
                 SetSpriteRendererMaterialInAllChildren(selected[0].transform, defaultSpriteMaterial);
+                FindObjectOfType<DisplaySelectedItem>().UpdateDisplay(null);
                 // Empty the selected items array
                 Array.Clear(selected, 0, 2);
 
