@@ -15,12 +15,14 @@
           <e p="Blob.cs" t="Include" />
           <e p="Breathe.cs" t="Include" />
           <e p="ControlKey.cs" t="Include" />
+          <e p="DisplaySelectedItem.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="Menu.cs" t="Include" />
           <e p="ParticleBurst.cs" t="Include" />
           <e p="ParticleEffectAtPosition.cs" t="Include" />
           <e p="Recipe.cs" t="Include" />
           <e p="RecipeDisplay.cs" t="Include" />
+          <e p="RectBreathe.cs" t="Include" />
           <e p="SelectSpriteFromPool.cs" t="Include" />
           <e p="Socket.cs" t="Include" />
           <e p="Spawner.cs" t="Include" />
