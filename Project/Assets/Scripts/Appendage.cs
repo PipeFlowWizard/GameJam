@@ -23,16 +23,22 @@ public class Appendage : MonoBehaviour
             rb.MovePosition(parentJoint.position);
     }
 
-    public void Attach(Transform tr)
+    public void AttachToOther(Transform tr)
     {
         transform.parent = tr;
         transform.localRotation = Quaternion.identity;
         transform.localPosition = Vector2.zero;
         parentJoint = tr;
     }
-    public void Attach2(Appendage a)
+    public void AttachToMe(Appendage a)
     {
         socket.Attach(a);
+        Invoke(nameof(DestroySelf), 5f);
+    }
+
+    private void DestroySelf()
+    {
+        Destroy(this.gameObject);
     }
 }
 

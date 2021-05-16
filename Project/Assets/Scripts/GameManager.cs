@@ -17,12 +17,14 @@ public class GameManager : MonoBehaviour
     
     static public GameObject[] selected = new GameObject[2];
     public int score = 0;
-    public float timeLimit = 120;
-    public TextMeshProUGUI timeText, scoreText;
-    private float remainingTime;
+    public TextMeshProUGUI  populationText, scoreText;
     public GameObject matchParticleBurst;
     public CinemachineVirtualCamera cam;
     public CinemachineImpulseSource impulse;
+
+    public int blobPopulation = 0;
+    public int maxBlobPopulation = 10;
+    public int numAppendages = 0;
     
 
     
@@ -43,16 +45,13 @@ public class GameManager : MonoBehaviour
     {
         impulse = GetComponent<CinemachineImpulseSource>();
         score = 0;
-        remainingTime = timeLimit;
-        DisplayRemainingTime();
         UpdateScoreDisplay();
     }
 
     // Update is called once per frame
     void Update()
     {
-        remainingTime -= Time.deltaTime;
-        DisplayRemainingTime();
+      
     }
 
     public void AddScore(int amount)
@@ -60,13 +59,7 @@ public class GameManager : MonoBehaviour
         score += amount;
         UpdateScoreDisplay();
     }
-
-    private void DisplayRemainingTime()
-    {
-        if (!timeText)
-            return;
-        timeText.text = (int)remainingTime / 60 + " : " + remainingTime % 60;
-    }
+    
 
     private void UpdateScoreDisplay()
     {
@@ -117,7 +110,7 @@ public class GameManager : MonoBehaviour
                 //Case 2: Appendage x Appendage
                 if (selected[0].CompareTag("Appendage") && selected[1].CompareTag("Appendage"))
                 {
-                    selected[0].GetComponent<Appendage>().Attach2(selected[1].GetComponent<Appendage>());
+                    selected[0].GetComponent<Appendage>().AttachToMe(selected[1].GetComponent<Appendage>());
                 }
                 //Case 3: Blob x Appendage || Appendage x Blob
                 if (selected[0].CompareTag("Blob") && selected[1].CompareTag("Appendage"))
@@ -179,4 +172,6 @@ public class GameManager : MonoBehaviour
         Destroy(blob1.gameObject);
         Destroy(blob2.gameObject);
     }
+
+   
 }

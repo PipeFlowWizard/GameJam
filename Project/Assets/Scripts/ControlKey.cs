@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 /// <summary>
 /// <para/>A generalized keyboard control structure, created to abstract input collection.
-/// <para/>Attach to an object, specify keycodes and give reference to movement script to use.
+/// <para/>AttachToOther to an object, specify keycodes and give reference to movement script to use.
 /// <para/>Input values can be accessed by [int], ["identifier"] or Get() Set() notation
 /// </summary>
 public class ControlKey : MonoBehaviour

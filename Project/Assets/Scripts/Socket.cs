@@ -15,7 +15,7 @@ public class Socket : MonoBehaviour
     {
         if(!a.isSocketed)
         {
-            a.Attach(transform);
+            a.AttachToOther(transform);
             appendage = a;
             _hasAppendage = true;
             appendage.isSocketed = true;

@@ -18,6 +18,7 @@
           <e p="Menu.cs" t="Include" />
           <e p="ParticleBurst.cs" t="Include" />
           <e p="ParticleEffectAtPosition.cs" t="Include" />
+          <e p="RecipeGenerator.cs" t="Include" />
           <e p="Socket.cs" t="Include" />
           <e p="Spawner.cs" t="Include" />
           <e p="TopDownCharacterController.cs" t="Include" />

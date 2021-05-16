@@ -239,9 +239,12 @@ MonoBehaviour:
   - {fileID: 4988026461962813135}
   - {fileID: 6504444625556293969}
   - {fileID: 4618603481338235132}
-  movementInterval: 1
+  movementInterval: 0.5
   movementSpeed: 1
+  baseMovementSpeed: 0.2
   movementBounds: {x: 20, y: 20}
+  socketsUsed: 0
+  speedScalar: 0.5
   numRightLegs: 0
   numLeftLegs: 0
   numRightArms: 0

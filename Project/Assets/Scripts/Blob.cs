@@ -10,13 +10,16 @@ public class Blob : MonoBehaviour
     public Socket[] appendageSockets;
     public float movementInterval = 0;
     public float movementSpeed = 1;
+    public float baseMovementSpeed = 1;
     public Vector2 movementBounds = Vector2.zero;
+    public int socketsUsed;
+    [Range(0,1)]
+    public float speedScalar = 0.5f;
     
     
     private float lastMoveTime = 0;
     private Rigidbody2D _rb;
     private Vector2 desiredLocation = Vector2.zero;
-    private float step = 0;
     private int emptySocketIndex = 0;
 
     public int numRightLegs = 0;
@@ -29,6 +32,11 @@ public class Blob : MonoBehaviour
     
 
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(Vector3.zero, movementBounds);
+    }
+    
     private void Start()
     {
         
@@ -41,7 +49,6 @@ public class Blob : MonoBehaviour
     {
         var desiredDirection = desiredLocation - new Vector2(transform.position.x,transform.position.y);
         
-        step = movementSpeed * Time.time;
         if (Time.time - lastMoveTime > movementInterval)
         {
             lastMoveTime = Time.time;
@@ -66,7 +73,7 @@ public class Blob : MonoBehaviour
         var boundsX = movementBounds.x / 2;
         var boundsY = movementBounds.y / 2;
         desiredLocation = new Vector2(UnityEngine.Random.Range(-boundsX,boundsX), UnityEngine.Random.Range(-boundsY,boundsY));
-        desiredLocation = desiredLocation * Mathf.PerlinNoise(Time.time, Time.time);
+        //desiredLocation = desiredLocation * Mathf.PerlinNoise(Time.time, Time.time);
     }
 
     public void Attach(Appendage appendage)
@@ -89,6 +96,8 @@ public class Blob : MonoBehaviour
             
         }
         
+        movementSpeed = baseMovementSpeed + speedScalar * socketsUsed;
+
     }
 
     /// <summary>
@@ -103,6 +112,8 @@ public class Blob : MonoBehaviour
             {
                 return socket;
             }
+
+            socketsUsed += 1;
         }
 
         return null;
