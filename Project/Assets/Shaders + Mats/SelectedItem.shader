@@ -4,6 +4,7 @@
     {
         _MainTex ("Texture", 2D) = "white" {}
         _Color("Colour", Color) = (1, 1, 1, 1)
+        _OutlineSize("Outline size", float) = 1
     }
     SubShader
     {
@@ -44,6 +45,7 @@
 
             sampler2D _MainTex;
             fixed4 _Color;
+            float _OutlineSize;
 
             fixed4 frag (v2f i) : SV_Target
             {
@@ -53,12 +55,12 @@
                 col *= _Color;
 
                 if (col.a != 0) {
-                    float alpha = 1;
+                    float alpha = 1, edge = _OutlineSize / 100;
                     for (int j = 0; j < 3; j++) {
-                        fixed4 pixelUp = tex2D(_MainTex, i.uv + fixed2(0, j * .01f));
-                        fixed4 pixelDown = tex2D(_MainTex, i.uv - fixed2(0, j * .01f));
-                        fixed4 pixelRight = tex2D(_MainTex, i.uv + fixed2(j * .01f, 0));
-                        fixed4 pixelLeft = tex2D(_MainTex, i.uv - fixed2(j * .01f, 0));
+                        fixed4 pixelUp = tex2D(_MainTex, i.uv + fixed2(0, j * edge));
+                        fixed4 pixelDown = tex2D(_MainTex, i.uv - fixed2(0, j * edge));
+                        fixed4 pixelRight = tex2D(_MainTex, i.uv + fixed2(j * edge, 0));
+                        fixed4 pixelLeft = tex2D(_MainTex, i.uv - fixed2(j * edge, 0));
 
                         alpha = pixelUp.a * pixelDown.a * pixelRight.a * pixelLeft.a;
                         if (alpha == 0) {
