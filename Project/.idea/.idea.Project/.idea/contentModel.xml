@@ -19,8 +19,10 @@
           <e p="ParticleBurst.cs" t="Include" />
           <e p="ParticleEffectAtPosition.cs" t="Include" />
           <e p="Recipe.cs" t="Include" />
+          <e p="RecipeDisplay.cs" t="Include" />
           <e p="Socket.cs" t="Include" />
           <e p="Spawner.cs" t="Include" />
+          <e p="SpawnPrefabWithEffect.cs" t="Include" />
           <e p="TopDownCharacterController.cs" t="Include" />
         </e>
         <e p="Shaders + Mats" t="Include">
