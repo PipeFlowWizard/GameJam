@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     static public GameObject[] selected = new GameObject[2];
     public int score = 0;
-    public TextMeshProUGUI populationText, scoreText;
+    public TextMeshProUGUI populationText, scoreText, timeText;
     public GameObject matchParticleBurst;
     public CinemachineVirtualCamera cam;
     public CinemachineImpulseSource impulse;
@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour
     public int maxBlobPopulation = 10;
     public int numAppendages = 0;
     public Recipe recipe;
+    private float remainingTime = 30f;
+    public float timeLimit = 120;
+    
 
 
 
@@ -37,6 +40,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void Awake()
     {
+        
         if (_instance != null && _instance != this)
         {
             Destroy(this.gameObject);
@@ -53,10 +57,24 @@ public class GameManager : MonoBehaviour
         recipe.GenerateRecipe();
         impulse = GetComponent<CinemachineImpulseSource>();
         score = 0;
+        remainingTime = timeLimit;
+        DisplayRemainingTime();
         UpdateScoreDisplay();
     }
 
+    private void FixedUpdate()
+    {
+        remainingTime -= Time.deltaTime;
+        DisplayRemainingTime();
+    }
 
+    private void DisplayRemainingTime()
+    {
+        if (!timeText)
+            return;
+        timeText.text = (int)remainingTime / 60 + " : " + remainingTime % 60;
+    }
+    
 
     public void AddScore(int amount)
     {
