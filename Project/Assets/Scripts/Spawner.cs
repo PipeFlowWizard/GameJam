@@ -51,6 +51,8 @@ public class Spawner : MonoBehaviour
     public void SpawnBlobAtPosition(Vector2 v)
     {
         Instantiate(blobPrefabs[Random.Range(0, blobPrefabs.Length)], v, Quaternion.identity);
+        GameManager.Instance.blobPopulation += 1;
+        GameManager.Instance.UpdatePopulationDisplay();
     }
 
     public void SpawnBlobWithLimbsAtPosition(Vector2 v)
@@ -67,6 +69,8 @@ public class Spawner : MonoBehaviour
             blob.Attach(Instantiate(limbPrefabs[Random.Range(0, limbPrefabs.Length)]).GetComponent<Appendage>());
             n--;
         }
+        GameManager.Instance.blobPopulation += 1;
+        GameManager.Instance.UpdatePopulationDisplay();
     }
 
     public void SpawnAppendageAtPosition(Vector2 v)
@@ -81,6 +85,8 @@ public class Spawner : MonoBehaviour
     {
         Vector2 spawnPos = GenerateSpawnPosition();
         var blob = Instantiate(blobPrefabs[Random.Range(0, blobPrefabs.Length)], spawnPos, Quaternion.identity);
+        GameManager.Instance.blobPopulation += 1;
+        GameManager.Instance.UpdatePopulationDisplay();
         return blob;
     }
 

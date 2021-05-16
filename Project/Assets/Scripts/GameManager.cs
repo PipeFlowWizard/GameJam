@@ -22,8 +22,9 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI populationText, scoreText, timeText;
     public GameObject matchParticleBurst;
     public CinemachineVirtualCamera cam;
-    public CinemachineImpulseSource impulse;
+    private CinemachineImpulseSource impulse;
     public Material defaultSpriteMaterial, selectedMaterial;
+    public RecipeDisplay RecipeDisplay;
 
     public int blobPopulation = 0;
     public int maxBlobPopulation = 10;
@@ -55,11 +56,13 @@ public class GameManager : MonoBehaviour
     {
         recipe = new Recipe();
         recipe.GenerateRecipe();
+        RecipeDisplay.UpdateRecipe(recipe.NumLeftArms,recipe.NumRightArms,recipe.NumLeftLegs, recipe.NumRightLegs);
         impulse = GetComponent<CinemachineImpulseSource>();
         score = 0;
         remainingTime = timeLimit;
         DisplayRemainingTime();
         UpdateScoreDisplay();
+        UpdatePopulationDisplay();
     }
 
     private void FixedUpdate()
@@ -88,6 +91,11 @@ public class GameManager : MonoBehaviour
         if (!scoreText)
             return;
         scoreText.text = "" + score;
+    }
+
+    public void UpdatePopulationDisplay()
+    {
+        populationText.text = "" + blobPopulation;
     }
 
 
@@ -195,6 +203,9 @@ public class GameManager : MonoBehaviour
         impulse.GenerateImpulse();
         Instantiate(matchParticleBurst, blob1.transform.position, quaternion.identity);
         Instantiate(matchParticleBurst, blob2.transform.position, quaternion.identity);
+        
+        blobPopulation -= 2;
+        UpdatePopulationDisplay();
 
         Destroy(blob1.gameObject);
         Destroy(blob2.gameObject);
@@ -233,6 +244,7 @@ public class GameManager : MonoBehaviour
 
             }
             recipe.GenerateRecipe();
+            RecipeDisplay.UpdateRecipe(recipe.NumLeftArms,recipe.NumRightArms,recipe.NumLeftLegs, recipe.NumRightLegs);
             Debug.Log("match!");
         }
 
