@@ -175,7 +175,7 @@ public class GameManager : MonoBehaviour
                 FindObjectOfType<DisplaySelectedItem>().UpdateDisplay(null);
                 // Empty the selected items array
                 Array.Clear(selected, 0, 2);
-
+                
             }
 
         }
@@ -224,6 +224,9 @@ public class GameManager : MonoBehaviour
 
         Destroy(blob1.gameObject);
         Destroy(blob2.gameObject);
+
+        FindObjectOfType<Spawner>().SpawnBlob(UnityEngine.Random.Range(0, 4));
+
     }
     
 
