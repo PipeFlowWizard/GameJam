@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8608786994633016080}
   - component: {fileID: 8608786994633016081}
   - component: {fileID: 8608786994633016082}
+  - component: {fileID: 8247670194417296911}
   m_Layer: 0
   m_Name: Recipe Icon
   m_TagString: Untagged
@@ -111,6 +112,20 @@ MonoBehaviour:
   rArm: {fileID: 0}
   lLeg: {fileID: 0}
   rLeg: {fileID: 0}
+--- !u!114 &8247670194417296911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8608786994633016083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a30e385ebb14e9419924766685317a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: {x: 0.05, y: 0.1}
+  frequency: {x: 10, y: 10}
 --- !u!1 &8608786994992612877
 GameObject:
   m_ObjectHideFlags: 0
