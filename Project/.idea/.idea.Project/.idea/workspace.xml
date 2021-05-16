@@ -20,11 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b954c9d2-2f10-4e49-be4c-2f9be9620698" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Recipe Icon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Recipe Icon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Arrow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Arrow.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Blob 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Blob 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Blob 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Blob 2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Blob.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Blob.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Left_Arm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Left_Arm.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI Canvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +51,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Spawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Socket.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Appendage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpawnPrefabWithEffect.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -64,8 +67,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/RecipeGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Recipe.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Blob.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
       </list>
     </option>
   </component>
@@ -117,7 +120,7 @@
       <option name="presentableId" value="Default" />
       <updated>1621095832147</updated>
       <workItem from="1621095840751" duration="4537000" />
-      <workItem from="1621108629076" duration="26814000" />
+      <workItem from="1621108629076" duration="28205000" />
     </task>
     <servers />
   </component>

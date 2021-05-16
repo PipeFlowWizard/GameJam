@@ -33,11 +33,11 @@ public class Spawner : MonoBehaviour
         {
             blobTimer = 0;
             // pass a random int if you wnat appendages on the blob
-            if (Random.Range(0, 100) < 5)
-                InitiateSpawnProcess(SpawnBlobWithLimbsAtPosition);
-            else
+            // if (Random.Range(0, 100) < 5)
+            //     InitiateSpawnProcess(SpawnBlobWithLimbsAtPosition);
+            // else
                 InitiateSpawnProcess(SpawnBlobAtPosition);
-            //SpawnBlob();
+                //SpawnBlob();
         }
     }
 
