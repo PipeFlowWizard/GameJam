@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour
     {
         // Get the top most object in the gameobject tree
         var mainObject = gameObject.transform.root.gameObject;
-        
+        var spawner = FindObjectOfType<Spawner>();
 
         if (mainObject.CompareTag("Appendage") && (mainObject.GetComponent<Appendage>().isSocketed ||
                                                    mainObject.GetComponent<Appendage>().socket.HasAppendage))
@@ -162,6 +162,10 @@ public class GameManager : MonoBehaviour
                     AddScore(-20);
                     textPopup.Create(selected[1].transform.position, "-20",Color.red);
                     textPopup.Create(selected[1].transform.position, "Limbs Wasted!");
+                    for(int i = 0; i < UnityEngine.Random.Range(1, 3); i++)
+                    {
+                        spawner.SpawnAppendage();
+                    }
                 }
 
                 //Case 3: Blob x Appendage || Appendage x Blob
@@ -201,6 +205,7 @@ public class GameManager : MonoBehaviour
     /// <param name="other">Blob to be matched with</param>
     public void MatchBlobs(Blob blob1, Blob blob2)
     {
+        var spawner = FindObjectOfType<Spawner>();
         var totalNumLegs = blob1.NumLegs + blob2.NumLegs;
         var totalNumArms = blob1.NumArms + blob2.NumArms;
         var totalNumLeftArms = blob1.numLeftArms + blob2.numLeftArms;
@@ -251,8 +256,13 @@ public class GameManager : MonoBehaviour
 
         Destroy(blob1.gameObject);
         Destroy(blob2.gameObject);
-
-        FindObjectOfType<Spawner>().SpawnBlob(UnityEngine.Random.Range(0, 4));
+        
+        for(int i = 0; i < UnityEngine.Random.Range(1,3); i++)
+            spawner.SpawnBlob(UnityEngine.Random.Range(0, 4));
+        for(int i = 0; i < UnityEngine.Random.Range(1, 4); i++)
+        {
+            spawner.SpawnAppendage();
+        }
 
     }
     
