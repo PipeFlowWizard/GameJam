@@ -2058,6 +2058,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114831734425748139, guid: 14dc04dec67d2474f827124cb4906b0e,
         type: 3}
+      propertyPath: inputs.Array.data[4].keyCodes.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831734425748139, guid: 14dc04dec67d2474f827124cb4906b0e,
+        type: 3}
+      propertyPath: inputs.Array.data[4].mouseButtons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831734425748139, guid: 14dc04dec67d2474f827124cb4906b0e,
+        type: 3}
       propertyPath: inputs.Array.data[4].identifier
       value: fire
       objectReference: {fileID: 0}
@@ -2068,11 +2078,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114831734425748139, guid: 14dc04dec67d2474f827124cb4906b0e,
         type: 3}
-      propertyPath: inputs.Array.data[4].keyCodes.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114831734425748139, guid: 14dc04dec67d2474f827124cb4906b0e,
-        type: 3}
       propertyPath: inputs.Array.data[4].keyCodes.Array.data[0]
       value: d
       objectReference: {fileID: 0}
@@ -2080,11 +2085,6 @@ PrefabInstance:
         type: 3}
       propertyPath: inputs.Array.data[4].keyCodes.Array.data[1]
       value: rightarrow
-      objectReference: {fileID: 0}
-    - target: {fileID: 114831734425748139, guid: 14dc04dec67d2474f827124cb4906b0e,
-        type: 3}
-      propertyPath: inputs.Array.data[4].mouseButtons.Array.size
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114831734425748139, guid: 14dc04dec67d2474f827124cb4906b0e,
         type: 3}
@@ -2159,6 +2159,7 @@ GameObject:
   - component: {fileID: 1442957376}
   - component: {fileID: 1442957375}
   - component: {fileID: 1442957374}
+  - component: {fileID: 1442957378}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2327,6 +2328,7 @@ MonoBehaviour:
     type: 2}
   selectedMaterial: {fileID: 2100000, guid: 110558100f0f4454988e1fb1308b248b, type: 2}
   RecipeDisplay: {fileID: 501038863}
+  textPopup: {fileID: 1442957378}
   blobPopulation: 0
   maxBlobPopulation: 10
   numAppendages: 0
@@ -2345,6 +2347,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1442957378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442957373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d406c8c64ae7d448502f40f3425e19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textPopupPrefab: {fileID: 7010608775874916221, guid: 258b21a93b62de649a256fb4c059fc9b,
+    type: 3}
 --- !u!1001 &1451666501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2616,7 +2632,7 @@ PrefabInstance:
     - target: {fileID: 7476875348837230784, guid: fb83ce5840eebdc4eb1748f0f61e9907,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
-      value: 1
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7476875348837230785, guid: fb83ce5840eebdc4eb1748f0f61e9907,
         type: 3}
