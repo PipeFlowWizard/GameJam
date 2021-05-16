@@ -162,8 +162,10 @@ public class GameManager : MonoBehaviour
                     AddScore(-20);
                     textPopup.Create(selected[1].transform.position, "-20",Color.red);
                     textPopup.Create(selected[1].transform.position, "Limbs Wasted!");
-                    spawner.SpawnAppendage();
-                    
+                    for(int i = 0; i < UnityEngine.Random.Range(1,3); i++)
+                    {
+                        spawner.SpawnAppendage();
+                    }
                 }
 
                 //Case 3: Blob x Appendage || Appendage x Blob
@@ -257,7 +259,7 @@ public class GameManager : MonoBehaviour
         
         for(int i = 0; i < UnityEngine.Random.Range(1,3); i++)
             spawner.SpawnBlob(UnityEngine.Random.Range(0, 4));
-        for(int i = 0; i < UnityEngine.Random.Range(0, 3); i++)
+        for(int i = 0; i < UnityEngine.Random.Range(0, 4); i++)
         {
             spawner.SpawnAppendage();
         }
