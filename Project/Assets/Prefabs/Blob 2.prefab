@@ -233,6 +233,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318cdd09631bfd442b72c0763526444f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  faceSprites:
+  - {fileID: 3701623286793537296, guid: e973838c471d6a34b9d8d2816a3486cc, type: 3}
+  - {fileID: -2761294485135032126, guid: 410d71a2ef7305047b5d1a4dbecddd8a, type: 3}
+  - {fileID: 560844965781167818, guid: 588b63771fc43f5448072abe796fb2e8, type: 3}
+  - {fileID: 33336155049300796, guid: 12348e857f745ea4a9459ab869b8bb31, type: 3}
+  - {fileID: 606968897211647208, guid: 44dc374999c651a478d2bef25cfc5c53, type: 3}
   appendageSockets:
   - {fileID: 7259265927490548282}
   - {fileID: 2781161810131612541}

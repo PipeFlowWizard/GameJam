@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 410d71a2ef7305047b5d1a4dbecddd8a
+guid: 4ef274677c2e89143be29b33e7478a38
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2761294485135032126
-    second: Body_Type03_Stage01_0
+      213: -3299244165484159999
+    second: Body_Type02_Ultimate_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -102,22 +102,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Body_Type03_Stage01_0
+      name: Body_Type02_Ultimate_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 173
-        width: 457
-        height: 231
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 54
+        y: 2
+        width: 372
+        height: 371
+      alignment: 9
+      pivot: {x: 0.4781657, y: 0.46646854}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c00845bb49eda9d0800000000000000
-      internalID: -2761294485135032126
+      spriteID: 10c590169eab632d0800000000000000
+      internalID: -3299244165484159999
       vertices: []
       indices: 
       edges: []
