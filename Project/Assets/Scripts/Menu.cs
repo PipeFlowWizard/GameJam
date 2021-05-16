@@ -8,6 +8,13 @@ public class Menu : MonoBehaviour
 {
     public string nameOfSceneToLoad;
 
+    private void Start()
+    {
+        Slider s = GetComponentInChildren<Slider>(true);
+        if(s)
+            s.value = AudioListener.volume;
+    }
+
     public void ExitGame()
     {
         Application.Quit();
