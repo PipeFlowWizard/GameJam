@@ -25,6 +25,7 @@
           <e p="Socket.cs" t="Include" />
           <e p="Spawner.cs" t="Include" />
           <e p="SpawnPrefabWithEffect.cs" t="Include" />
+          <e p="TextPopup.cs" t="Include" />
           <e p="TopDownCharacterController.cs" t="Include" />
         </e>
         <e p="Shaders + Mats" t="Include">

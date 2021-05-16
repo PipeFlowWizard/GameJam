@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     private CinemachineImpulseSource impulse;
     public Material defaultSpriteMaterial, selectedMaterial;
     public RecipeDisplay RecipeDisplay;
+    public TextPopup textPopup;
 
     public int blobPopulation = 0;
     public int maxBlobPopulation = 10;
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        textPopup = GetComponent<TextPopup>();
         recipe = new Recipe();
         recipe.GenerateRecipe();
         RecipeDisplay.UpdateRecipe(recipe.NumLeftArms,recipe.NumRightArms,recipe.NumLeftLegs, recipe.NumRightLegs);
@@ -117,6 +119,7 @@ public class GameManager : MonoBehaviour
     {
         // Get the top most object in the gameobject tree
         var mainObject = gameObject.transform.root.gameObject;
+        
 
         if (mainObject.CompareTag("Appendage") && (mainObject.GetComponent<Appendage>().isSocketed ||
                                                    mainObject.GetComponent<Appendage>().socket.HasAppendage))
@@ -128,6 +131,7 @@ public class GameManager : MonoBehaviour
         // Ensure that the object is an appendage or a blob
         if (mainObject.CompareTag("Appendage") || mainObject.CompareTag("Blob"))
         {
+            textPopup.Create(mainObject.transform.position, "Hit");
             if (selected[0] == null)
             {
                 selected[0] = mainObject;
@@ -242,6 +246,7 @@ public class GameManager : MonoBehaviour
     public int CheckIfSatisfyRecipe(Blob blob)
     {
         int points = 0;
+        bool perfect = false;
         if (blob.NumArms == recipe.NumArms && blob.NumLegs == recipe.NumLegs)
         {
             points += 20;
@@ -250,12 +255,15 @@ public class GameManager : MonoBehaviour
                 blob.numLeftLegs == recipe.NumLeftLegs && blob.numRightLegs == recipe.NumRightLegs)
             {
                 points += 20;
-
+                perfect = true;
             }
             recipe.GenerateRecipe();
             RecipeDisplay.UpdateRecipe(recipe.NumLeftArms,recipe.NumRightArms,recipe.NumLeftLegs, recipe.NumRightLegs);
-            Debug.Log("match!");
+            if(perfect)
+                textPopup.Create(blob.transform.position, "Perfect Match!");
+            else textPopup.Create(blob.transform.position, "Match");
         }
+        
 
         return points;
     }
