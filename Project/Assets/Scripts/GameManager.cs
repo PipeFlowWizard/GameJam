@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public GameObject matchParticleBurst;
     public CinemachineVirtualCamera cam;
     public CinemachineImpulseSource impulse;
+    public Material defaultSpriteMaterial, selectedMaterial;
 
     public int blobPopulation = 0;
     public int maxBlobPopulation = 10;
@@ -93,6 +94,7 @@ public class GameManager : MonoBehaviour
             if (selected[0] == null)
             {
                 selected[0] = mainObject;
+                SetSpriteRendererMaterialInAllChildren(mainObject.transform, selectedMaterial);
             }
             else if (selected[1] == null && (selected[0] != mainObject))
             {
@@ -127,7 +129,7 @@ public class GameManager : MonoBehaviour
                     selected[1].GetComponent<Blob>().Attach(selected[0].GetComponent<Appendage>());
                 }
 
-
+                SetSpriteRendererMaterialInAllChildren(selected[0].transform, defaultSpriteMaterial);
                 // Empty the selected items array
                 Array.Clear(selected, 0, 2);
 
@@ -191,6 +193,17 @@ public class GameManager : MonoBehaviour
         return recipeString;
     }
 
+    private void SetSpriteRendererMaterialInAllChildren(Transform t, Material mat)
+    {
+        SpriteRenderer rend = t.GetComponent<SpriteRenderer>();
+        if (rend)
+            rend.material = mat;
+
+        foreach(Transform child in t)
+        {
+            SetSpriteRendererMaterialInAllChildren(child, mat);
+        }
+    }
 }
 
 
