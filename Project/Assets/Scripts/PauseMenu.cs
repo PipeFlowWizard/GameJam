@@ -9,6 +9,11 @@ public class PauseMenu : MonoBehaviour
     public GameObject menu;
     public static bool paused = false;
 
+    private void Start()
+    {
+        paused = false;
+    }
+
     private void Update()
     {
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
